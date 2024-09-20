@@ -1,7 +1,7 @@
 <head>
-    <style> body { margin: 0; } </style>
-  
+    <link rel="stylesheet" href="style.css">
     <script src="//unpkg.com/3d-force-graph"></script>
+
     <!--<script src="../../dist/3d-force-graph.js"></script>-->
   </head>
   
@@ -18,11 +18,14 @@
           .map(id => ({
             source: id,
             target: Math.round(Math.random() * (id-1))
+            
+
           }))
       };
   
       const Graph = ForceGraph3D()
         (document.getElementById('3d-graph'))
-          .graphData(gData);
+          .graphData(gData)
+          .nodeColor(node => node.color ||'white')
     </script>
   </body>
