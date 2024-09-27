@@ -1,31 +1,82 @@
-<head>
-    <link rel="stylesheet" href="style.css">
-    <script src="//unpkg.com/3d-force-graph"></script>
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Home</title>
+      <link rel="stylesheet" href="style.css">
+      <script src="//unpkg.com/3d-force-graph"></script>
+      <style>
+        #3d-graph{
+          width:100vw;
+          height: 100vh;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: -1;
+        }
 
-    <!--<script src="../../dist/3d-force-graph.js"></script>-->
-  </head>
-  
-  <body>
-    <div id="3d-graph"></div>
-  
-    <script>
-      // Random tree
-      const N = 300;
-      const gData = {
-        nodes: [...Array(N).keys()].map(i => ({ id: i })),
-        links: [...Array(N).keys()]
-          .filter(id => id)
-          .map(id => ({
-            source: id,
-            target: Math.round(Math.random() * (id-1))
-            
+        .about{
+          padding:100px;
+          background-color: #1a1a1a;
+          color: white;
+          text-align: center;
+          font-family: Arial, sans-serif;
+          min-height: 100vh;
+          position: relative;
+          z-index: -1;
+        }
 
-          }))
-      };
-  
-      const Graph = ForceGraph3D()
-        (document.getElementById('3d-graph'))
-          .graphData(gData)
-          .nodeColor(node => node.color ||'white')
-    </script>
-  </body>
+        html{
+          scroll-behavior: smooth;
+        }
+
+      </style>
+    </head>
+    
+    <body>
+      <!-- 3D Graph -->
+      <div id="3d-graph"></div>
+
+      <script>
+
+        // Random tree
+        const N = 300;
+        const gData = {
+          nodes: [...Array(N).keys()].map(i => ({ id: i })),
+          links: [...Array(N).keys()]
+            .filter(id => id)
+            .map(id => ({
+              source: id,
+              target: Math.round(Math.random() * (id-1))
+            }))
+        };
+
+        const Graph = ForceGraph3D()
+          (document.getElementById('3d-graph'))
+            .graphData(gData)
+            .nodeColor(node => node.color ||'white')
+            .showNavInfo(false);
+
+      </script>
+      <div id="transition_bottom">
+        <h1></h1>
+      </div>
+
+      <!--About Me-->
+      <div class="about">
+        <h1 id="about">Hey! My name is Andrew.</h1>
+        <br>
+        <p>
+          <br><br>
+          I am a 4th year <b>engineering physics</b> student studying at the University of British Columbia.
+          <br><br>
+          I am passionate and skilled in working with electrical circuits, machine learning, and hardware design. I'm currently taking courses in PCB design, pure physics, and large-language models.
+        </p>
+        <p>
+          <br>
+          Above is a visualization of my <b>Obsidian</b> database. Each node represents a specific topic that I have learned in-depth about.
+        </p>
+      </div>
+    </body>
+</html>
