@@ -1,90 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
     <script src="//unpkg.com/3d-force-graph"></script>
-    <style>
-        /* Styles for the graph */
-        body, html {
-            margin: 0; /* Remove default margins */
-            padding: 0;
-            height: 100%; /* Full height */
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-        }
-
-        /* Full-screen 3D graph container */
-        #3d-graph {
-            width: 100vw;
-            height: 100vh;
-            position: absolute; /* Allow it to be positioned without affecting layout */
-            top: 0;
-            left: 0;
-            z-index: -1; /* Behind everything */
-        }
-
-        /* About Me Section */
-        .about {
-            padding: 50px; /* Padding for spacing */
-            color: white; /* Text color for contrast */
-            text-align: center;
-            position: relative; /* Relative to allow z-index to work */
-            z-index: 1; /* Above the graph */
-            /* Remove background color to let graph show through */
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Ensure links are styled */
-        a {
-            color: white;
-            text-decoration: none;
-        }
-    </style>
-</head>
-
-<body>
+  </head>
+  
+  <body>
     <!-- 3D Graph -->
     <div id="3d-graph"></div>
 
     <script>
-        // Random tree
-        const N = 300;
-        const gData = {
-            nodes: [...Array(N).keys()].map(i => ({ id: i })),
-            links: [...Array(N).keys()]
-                .filter(id => id)
-                .map(id => ({
-                    source: id,
-                    target: Math.round(Math.random() * (id - 1))
-                }))
-        };
+      // Random tree data for 3D force graph
+      const N = 300;
+      const gData = {
+        nodes: [...Array(N).keys()].map(i => ({ id: i })),
+        links: [...Array(N).keys()]
+          .filter(id => id)
+          .map(id => ({
+            source: id,
+            target: Math.round(Math.random() * (id-1))
+          }))
+      };
 
-        const Graph = ForceGraph3D()
-            (document.getElementById('3d-graph'))
-                .graphData(gData)
-                .nodeColor(node => node.color || 'white')
-                .showNavInfo(false);
+      const Graph = ForceGraph3D()
+        (document.getElementById('3d-graph'))
+          .graphData(gData)
+          .nodeColor(() => 'white')  // Set node color
+          .showNavInfo(false);  // Hide navigation instructions
     </script>
 
-    <!-- About Me Section -->
-    <div class="about" id="about">
-        <h1>Hey! My name is Andrew.</h1>
-        <br>
-        <p>
-            I am a 4th year <b>engineering physics</b> student studying at the University of British Columbia.
-            <br><br>
-            I am passionate and skilled in working with electrical circuits, machine learning, and hardware design. I'm currently taking courses in PCB design, pure physics, and large-language models.
-        </p>
-        <p>
-            <br>
-            Above is a visualization of my <b>Obsidian</b> database. Each node represents a specific topic that I have learned in-depth about.
-        </p>
+    <!-- Transition Section (Optional) -->
+    <div id="transition_bottom">
+      <h1></h1>
     </div>
-</body>
+
+    <!-- About Me Section -->
+    <div class="about">
+      <h1 id="about">Hey! My name is Andrew.</h1>
+      <br>
+      <p>
+        <br><br>
+        I am a 4th year <b>engineering physics</b> student studying at the University of British Columbia.
+        <br><br>
+        I am passionate and skilled in working with electrical circuits, machine learning, and hardware design. I'm currently taking courses in PCB design, pure physics, and large-language models.
+      </p>
+      <p>
+        <br>
+        Above is a visualization of my <b>Obsidian</b> database. Each node represents a specific topic that I have learned in-depth about.
+      </p>
+    </div>
+
+  </body>
 </html>
