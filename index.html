@@ -14,7 +14,7 @@
 
     <script>
       // Random tree data for 3D force graph
-      const N = 300;
+      const N = 300;  
       const gData = {
         nodes: [...Array(N).keys()].map(i => ({ id: i })),
         links: [...Array(N).keys()]
@@ -25,11 +25,26 @@
           }))
       };
 
+
+      const distance = 1400;
       const Graph = ForceGraph3D()
         (document.getElementById('3d-graph'))
           .graphData(gData)
+          .enableNodeDrag(false)
+          .enableNavigationControls(false)
+          .cameraPosition({ z: distance })
           .nodeColor(() => 'white')  // Set node color
           .showNavInfo(false);  // Hide navigation instructions
+      
+      // camera orbit
+      let angle = 0;
+      setInterval(() => {
+        Graph.cameraPosition({
+          x: distance * Math.sin(angle),
+          z: distance * Math.cos(angle)
+       });
+       angle += Math.PI / 900;
+      }, 10);
     </script>
 
     <!-- Transition Section (Optional) -->

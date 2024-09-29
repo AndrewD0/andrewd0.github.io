@@ -1,6 +1,6 @@
 /* General Styling */
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Monospace';
     margin: 0;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
