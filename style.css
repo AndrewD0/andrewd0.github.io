@@ -1,6 +1,8 @@
+/*Font Styling*/
+
 /* General Styling */
 body {
-    font-family: 'Monospace';
+    font-family: 'Inter';
     margin: 0;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
