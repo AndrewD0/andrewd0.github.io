@@ -1,4 +1,8 @@
 /*Font Styling*/
+@font-face {
+    font-family: 'Inter';
+    src: url('assets/fonts/Inter-4.0/extras/ttf/Inter-SemiBold.ttf') format('truetype'); /* Adjust the path and format based on your file */
+  }
 
 /* General Styling */
 body {
