@@ -21,33 +21,34 @@
           .filter(id => id)
           .map(id => ({
             source: id,
-            target: Math.round(Math.random() * (id-1))
+            target: Math.round(Math.random() * (id - 1))
           }))
       };
-
 
       const distance = 1400;
       const Graph = ForceGraph3D()
         (document.getElementById('3d-graph'))
           .graphData(gData)
-          .enableNodeDrag(false)
+          .enableNodeDrag(true)
           .enableNavigationControls(false)
           .cameraPosition({ z: distance })
           .nodeColor(() => 'white')  // Set node color
+          .nodeOpacity(1)
+          .linkOpacity(0.5)
           .showNavInfo(false);  // Hide navigation instructions
-      
-      // camera orbit
+
+      // Camera orbit
       let angle = 0;
+
       setInterval(() => {
         Graph.cameraPosition({
           x: distance * Math.sin(angle),
           z: distance * Math.cos(angle)
-       });
-       angle += Math.PI / 900;
-      }, 10);
+        });
+        angle += Math.PI / 3600; 
+      }, 50);
     </script>
 
-    <!-- Transition Section (Optional) -->
     <div id="transition_bottom">
       <h1></h1>
     </div>
@@ -55,7 +56,6 @@
     <!-- About Me Section -->
     <div class="about">
       <h1 id="about">Hey! My name is Andrew.</h1>
-      <br>
       <p>
         <br><br>
         I am a 4th year <b>engineering physics</b> student studying at the University of British Columbia.
