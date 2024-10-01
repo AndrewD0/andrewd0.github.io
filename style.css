@@ -47,7 +47,19 @@ body {
     text-decoration: none;
     font-weight: bold;
     padding-left: 50px;
+    line-height: 24px;
 }
+
+.second_logo{
+    font-size: 24px;
+    font-family: 'Blonde';
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 590px;
+    line-height: 24px;
+}
+
 
 nav {
     display: flex
