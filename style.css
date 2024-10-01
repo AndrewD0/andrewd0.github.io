@@ -1,12 +1,21 @@
 /*Font Styling*/
 @font-face {
-    font-family: 'Inter';
-    src: url('/assets/fonts/Inter-4.0/extras/ttf/Inter-SemiBold.ttf') format('truetype'); /* Adjust the path and format based on your file */
+    font-family: 'Inter-Regular';
+    src: url('/assets/fonts/Inter-4.0/extras/ttf/Inter-Regular.ttf') format('truetype'); /* Adjust the path and format based on your file */
   }
 
+@font-face {
+    font-family: 'Inter-Black';
+    src: url('/assets/fonts/Inter-4.0/extras/ttf/Inter-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Blonde';
+    src: url(/assets/fonts/Blonde.otf) format('opentype');
+}
 /* General Styling */
 body {
-    font-family: 'Inter';
+    font-family: 'Inter-Regular';
     margin: 0;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
@@ -15,8 +24,55 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     color: white;
+}
+
+/*Navigation Bar*/
+#landing_page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 24px;
+    font-family: 'Blonde';
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav {
+    display: flex
+}
+
+.navigation_links{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding-right: 50px;
+}
+
+.navigation_links li {
+    display: inline; 
+}
+
+.navigation_links a {
+    font-family: 'Inter-Black';
+    color: white;
+    text-decoration: none; 
+    font-size: 18px; 
+    transition: color 0.3s ease; 
+}
+
+.navigation_links a:hover{
+    color: #ffffff
 }
 
 /* 3D Graph Styling */
