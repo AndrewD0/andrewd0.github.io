@@ -100,7 +100,7 @@ nav {
 }
 
 /* About Section Styling */
-.about {
+.about_me {
     scroll-snap-align: start;
     position: absolute;
     width: 50vw;
