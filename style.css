@@ -125,12 +125,20 @@ nav {
 }
 
 /*Projects*/
+
+.projects_header {
+    font-family: 'Inter-Black';
+    color: white;
+    text-decoration: none; 
+    font-size: 48px; 
+    transition: color 0.3s ease; 
+    margin-top: 200px;
+}
 .projects_grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 20px;
-    margin-top: 120px;
+    margin-top: 20px;
 }
   
 .project_item {
@@ -140,7 +148,8 @@ nav {
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    min-height: 300px; /* Adjust this value to set a minimum height for the cards */
+    height: 350px;
+    width: 300px;
 }
   
 .project_item img {
