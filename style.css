@@ -99,12 +99,24 @@ nav {
     z-index: -1; /* The graph stays behind other content */
 }
 
-/* About Section Styling */
+/* About Section Landing Page Styling */
 .about_me {
     scroll-snap-align: start;
     position: absolute;
     width: 50vw;
     top: 100vh; /* Position it after the graph */
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
+    color: white;
+    padding: 50px;
+    font-size: large;
+}
+
+.about {
+    scroll-snap-align: start;
+    position: absolute;
+    width: 50vw;
     left: 50%;
     transform: translate(-50%, 0%);
     background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
