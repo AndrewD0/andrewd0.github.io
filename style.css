@@ -40,9 +40,12 @@ body {
     flex-wrap: nowrap;
     width: 100vw;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    
     
     * {
-      background-color: #333333;
+      background-color: rgba(0,0,0,0);
       color: #ddd;
       text-decoration: none;
       font-size: 1.5rem;
@@ -64,6 +67,7 @@ body {
       flex-grow: 0;
       display: flex;
       font-family: 'Inter-Black';
+      list-style-type: none;
       
       a {
         padding: 0.5rem;
