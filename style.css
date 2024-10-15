@@ -57,7 +57,9 @@ body {
     .logo {
       flex-grow: 2;
       display: flex;
+      align-items: baseline;
       font-family: 'Blonde';
+      margin-left: 4rem;
       
       > * {
         padding: 0.5rem;
@@ -70,6 +72,8 @@ body {
       display: flex;
       font-family: 'Inter-Black';
       list-style-type: none;
+      margin-right: 4rem;
+      align-items: baseline;
       
       a {
         padding: 0.5rem;
@@ -117,7 +121,6 @@ body {
 }
 
 /*Projects*/
-
 .projects_header {
     font-family: 'Inter-Black';
     color: white;
