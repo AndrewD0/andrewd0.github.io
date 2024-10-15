@@ -42,6 +42,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+    z-index: 10;
+    height: 60px;
     
     
     * {
@@ -162,6 +164,14 @@ html {
     scroll-behavior: smooth;
 }
 
+#transition_top{
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, rgba(8, 8, 8, 1), rgba(0, 0, 0, 0));
+    z-index: 1;
+}
 #transition_bottom {
     position: absolute;
     top: 90vh;
