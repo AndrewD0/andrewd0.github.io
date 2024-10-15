@@ -127,7 +127,7 @@ body {
     text-decoration: none; 
     font-size: 48px; 
     transition: color 0.3s ease; 
-    margin-top: 100px;
+    margin-top: 10rem;
 }
 .projects_grid {
     display: grid;
