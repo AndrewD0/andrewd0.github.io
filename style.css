@@ -29,62 +29,46 @@ body {
 }
 
 /*Navigation Bar*/
-#landing_page {
+body {
+    padding: 0;
+    margin: 0;
+  }
+  
+.navbar {
+    position: relative;
     display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
     justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(0,0,0,0);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-.logo{
-    font-size: 24px;
-    font-family: 'Blonde';
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding-left: 50px;
-    line-height: 24px;
-}
-
-.second_logo{
-    font-size: 24px;
-    font-family: 'Blonde';
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding-right: 610px;
-    line-height: 24px;
-}
-
-nav {
-    display: flex
-}
-
-.navigation_links{
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding-right: 50px;
-}
-
-.navigation_links li {
-    display: inline; 
-}
-
-.navigation_links a {
-    font-family: 'Inter-Black';
-    color: white;
-    text-decoration: none; 
-    font-size: 18px; 
-    transition: color 0.3s ease; 
-}
-
-.navigation_links a:hover{
-    color: #ffffff
+    
+    * {
+      background-color: #333333;
+      color: #ddd;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    
+  
+    .logo {
+      flex-grow: 2;
+      display: flex;
+      font-family: 'Blonde';
+      
+      > * {
+        padding: 0.5rem;
+        display: block;
+      }
+    }
+  
+    .links {
+      flex-grow: 0;
+      display: flex;
+      font-family: 'Inter-Black';
+      
+      a {
+        padding: 0.5rem;
+      }
+    }
 }
 
 /* 3D Graph Styling */
