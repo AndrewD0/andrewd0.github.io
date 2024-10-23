@@ -64,6 +64,7 @@ body {
 
       a{
         transition: text-shadow 0.3s ease;
+        color: #fff;
       }
 
       a:hover{
@@ -92,6 +93,7 @@ body {
       a {
         padding: 0.5rem;
         transition: text-shadow 0.3s ease;  
+        color: #fff;
       }
 
       a:hover{
@@ -143,7 +145,7 @@ body {
 /*Projects*/
 .projects_header {
     font-family: 'Inter-Black';
-    color: white;
+    color: #fff;
     text-decoration: none; 
     font-size: 48px; 
     transition: color 0.3s ease; 
