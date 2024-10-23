@@ -55,11 +55,25 @@ body {
     
   
     .logo {
+
       flex-grow: 2;
       display: flex;
       align-items: baseline;
       font-family: 'Blonde';
       margin-left: 4rem;
+
+      a{
+        transition: text-shadow 0.3s ease;
+      }
+
+      a:hover{
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.3), 0 0 4px rgba(255, 255, 255, 0.2);; 
+        color: #fff;
+      }
+      
+      .first{
+        margin-right: 0.5rem;
+      }
       
       > * {
         padding: 0.5rem;
@@ -77,6 +91,12 @@ body {
       
       a {
         padding: 0.5rem;
+        transition: text-shadow 0.3s ease;  
+      }
+
+      a:hover{
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.3), 0 0 4px rgba(255, 255, 255, 0.2);;
+        color: #fff;
       }
     }
 }
