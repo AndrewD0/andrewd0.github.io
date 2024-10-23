@@ -167,6 +167,18 @@ body {
     text-align: center;
     height: 350px;
     width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project_item a {
+    display: block; /* Make the anchor tag cover the entire card */
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit color from the parent */
+}
+
+.project_item:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow */
 }
   
 .project_item img {
@@ -178,11 +190,12 @@ body {
 .project_item h3 {
     margin: 10px 0 5px;
     font-size: 1.2em;
+    color: #000;
 }
   
 .project_item p {
     font-size: 0.9em;
-    color: #666;
+    color: #000;
 }
 /* Smooth scroll behavior */
 html {
