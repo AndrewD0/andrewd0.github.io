@@ -47,7 +47,7 @@ body.index_page{
 /*Navigation Bar*/
   
 .navbar {
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-wrap: nowrap;
   width: 100vw;
