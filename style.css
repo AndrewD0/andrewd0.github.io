@@ -17,22 +17,24 @@
 body {
     font-family: 'Inter-Regular';
     margin: 0;
+    padding: 0;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     overflow-x: hidden;
-    background: black;
+    background: #111111;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     color: #f2f2f2;
+
+}
+
+body.index_page{
+  background-color: #000;
 }
 
 /*Navigation Bar*/
-body {
-    padding: 0;
-    margin: 0;
-  }
   
 .navbar {
     position: fixed;
