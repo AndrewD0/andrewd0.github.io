@@ -15,13 +15,18 @@
 }
 
 @font-face {
+  font-family: 'Inter-Medium';
+  src: url('assets/fonts/Inter-4.0/extras/ttf/Inter-Medium.ttf');
+}
+
+@font-face {
   font-family: 'Blonde';
   src: url(/assets/fonts/Blonde.otf) format('opentype');
 }
 
 /* General Styling */
 body {
-  font-family: 'Inter-Bold';
+  font-family: 'Inter-Medium';
   margin: 0;
   padding: 0;
   scroll-snap-type: y mandatory;
@@ -42,6 +47,7 @@ b, strong{
 
 body.index_page{
   background-color: #000;
+  font-family: 'Inter-Bold';
 }
 
 /*Navigation Bar*/
@@ -216,15 +222,13 @@ body.index_page{
 }
 
 /* Projects */
-.project-title{
-  font-family: 'Inter-Bold';
-  color: #f2f2f2;
-  text-decoration: none; 
-  font-size: 48px; 
-  transition: color 0.3s ease; 
-  margin-top: 8rem;
-}
+.project-documentation{
+  padding: 0 5rem;
+  margin: 5rem auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
 
+}
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;

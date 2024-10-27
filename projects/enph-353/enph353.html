@@ -17,29 +17,50 @@
           <span class="second">desk</span>
         </a>
       </div>
-
-      <div class = "links">
+      <div class="links">
         <li><a href="../../projects.html"><b>PROJECTS</b></a></li>
         <li><a href="../../about.html"><b>ABOUT ME</b></a></li>
       </div>
-    
+    </nav>
+
     <!-- Content -->
-     <main class="project-documentation">
+    <main class="project-documentation">
       <section class="project-title">
         <h1>Virtual Self-Driving Car</h1>
       </section>
 
-      <section class="summary">
-        <h2>Learning Summary</h2>
-
-        <p></p>
-
+      <section class="project-images">
+        <h2>Project Images</h2>
       </section>
 
+      <section class="summary">
+        <h2>Project Overview</h2>
+        <p>
+          ENPH 353 is the second project-based course and competition designed for engineering physics students. Over the course of one semester,
+          students in groups of 2 are tasked to control a robot using the <b>Robot Operating System</b> (ROS) software in a <b>Gazebo</b> environment and compete to accomplish several different tasks.
+          For this year's competition, the robot had to be programmed to autonomously drive around a racetrack while reading and detecting "clues" placed around the environment.
+          <br><br>
+          Through this project, I learned about and applied several important topics including:
+        </p>
+        <ul>
+          <li>using <b>Linux</b> to build and initialize a <b>Gazebo</b> environment with a controllable <b>ROS</b> robot.</li>
+          <li>using ROS to create and program several <b>nodes for reading sensor data, motor control, image processing, and a topic subscriber service for communication.</b></li>
+          <li>building a neural network from scratch and training it using gradient descent.</li>
+          <li>building a robust <b>convolutional neural network</b> for letter recognition, requiring the generation of thousands of samples for training and validation.</li>
+          <li>employing <b>Q-learning</b> to teach a robot how to drive.</li>
+        </ul>
+        <p>
+          For interacting with the Gazebo environment, I used <b>OpenCV</b> to:
+        </p>
+        <ul>
+          <li>design filtering and masking functions for robot driving.</li>
+          <li>employ homography and perspective transforms to process clues.</li>
+          <li>design a motion tracking algorithm using binary thresholding and frame deltas.</li>
+        </ul>
+        <p>Attached below is the final report that describes the architecture and system that we designed and employed for the competition.</p>
+        <iframe src="images/enph-353-final-report-website.pdf" width="100%" height="1000px" style="border: none;"></iframe>
+      </section>
+    </main>
 
-     </main>
-
-
-    </nav>
   </body>
 </html>
