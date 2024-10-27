@@ -24,7 +24,7 @@
   src: url(/assets/fonts/Blonde.otf) format('opentype');
 }
 
-/* General Styling */
+/* General styling */
 body {
   font-family: 'Inter-Medium';
   margin: 0;
@@ -38,20 +38,19 @@ body {
   align-items: center;
   justify-content: flex-start;
   color: #f2f2f2;
-
 }
 
 b, strong{
   color: #386cbc;
 }
 
-body.index_page{
+/* Separate styling for the landing page */
+body.index-page{
   background-color: #000;
   font-family: 'Inter-Bold';
 }
 
-/*Navigation Bar*/
-  
+/* Navigation bar */
 .navbar {
   position: absolute;
   display: flex;
@@ -63,17 +62,13 @@ body.index_page{
   z-index: 10;
   height: 60px;
     
-    
   * {
     background-color: rgba(0,0,0,0);
     color: #f2f2f2;
     text-decoration: none;
     font-size: 1.5rem;
   }
-    
-  
   .logo {
-
     flex-grow: 2;
     display: flex;
     align-items: baseline;
@@ -121,7 +116,7 @@ body.index_page{
   }
 }
 
-/* 3D Graph Styling */
+/* 3D graph styling */
 #3d-graph {
   background-color: #111111;
   width: 100vw;
@@ -134,23 +129,12 @@ body.index_page{
   box-sizing: border-box;
 }
 
-/* About Section Landing Page Styling */
-.about_me_landing {
+/* About section landing page styling */
+.about-me-index {
   scroll-snap-align: start;
   position: absolute;
   width: 50vw;
   top: 100vh; /* Position it after the graph */
-  left: 50%;
-  transform: translate(-50%, 0%);
-  background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
-  padding: 50px;
-  font-size: large;
-}
-
-.about {
-  scroll-snap-align: start;
-  position: absolute;
-  width: 50vw;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
@@ -188,7 +172,7 @@ body.index_page{
   position: relative;
 }
 
-.project-item a{
+.project-item a {
   color: inherit;
   text-decoration: none;
   height: 100%;
@@ -196,18 +180,6 @@ body.index_page{
   display: block;
 }
 
-.project-item:hover {
-  transform: scale(1.05); /* Slightly increase size */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow */
-}
-  
-.project-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-  
 .project-item h3 {
   margin: 10px 0 5px;
   font-size: 1.2rem;
@@ -221,44 +193,58 @@ body.index_page{
   font-family: 'Inter-Bold';
 }
 
+.project-item:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow */
+}
+  
+.project-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+
 /* Projects */
-.project-documentation{
+.project-documentation {
   padding: 0 5rem;
   margin: 5rem auto 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
-.project-title h1{
+.project-title h1 {
   font-size: 2.5rem;
   font-family: 'Inter-Bold';
 }
 
-.project-title ul{
+.project-title ul {
   font-size: 1.4rem;
 }
 
-.project-title h2{
+.project-title h2 {
   font-size: 2.2rem;
 }
 
-.summary h2{
+.summary h2 {
   font-size:2.2rem;
 }
 
-.project-images h2{
+.project-images h2 {
   font-size:2.2rem;
 }
-.project-images{
+.project-images {
   margin-top: 2rem;
 }
 
-.project-images img{
+.project-images img {
   width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
 }
+
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
