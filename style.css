@@ -138,11 +138,18 @@ body.index-page{
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
-  padding: 50px;
+  padding: 2rem;
   font-size: large;
 }
 
-/*Projects*/
+.about-me{
+  font-family: 'Inter-Bold';
+  margin-top: 20rem;
+  font-size: 3rem;
+
+}
+
+/*Projects Grid*/
 .projects-header {
   font-family: 'Inter-Bold';
   color: #f2f2f2;
@@ -204,7 +211,6 @@ body.index-page{
   object-fit: cover;
   border-radius: 6px;
 }
-
 
 /* Projects */
 .project-documentation {
