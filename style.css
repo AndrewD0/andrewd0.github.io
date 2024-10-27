@@ -163,7 +163,7 @@ body.index_page{
   font-family: 'Inter-Bold';
   color: #f2f2f2;
   text-decoration: none; 
-  font-size: 48px; 
+  font-size: 3rem; 
   transition: color 0.3s ease; 
   margin-top: 8rem;
 }
@@ -210,13 +210,13 @@ body.index_page{
   
 .project-item h3 {
   margin: 10px 0 5px;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: #f2f2f2;
   font-family: 'Inter-Bold';
 }
   
 .project-item p {
-  font-size: 1em;
+  font-size: 1rem;
   color: #80868B;
   font-family: 'Inter-Bold';
 }
@@ -227,7 +227,37 @@ body.index_page{
   margin: 5rem auto 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
+}
 
+.project-title h1{
+  font-size: 2.5rem;
+  font-family: 'Inter-Bold';
+}
+
+.project-title ul{
+  font-size: 1.4rem;
+}
+
+.project-title h2{
+  font-size: 2.2rem;
+}
+
+.summary h2{
+  font-size:2.2rem;
+}
+
+.project-images h2{
+  font-size:2.2rem;
+}
+.project-images{
+  margin-top: 2rem;
+}
+
+.project-images img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 /* Smooth scroll behavior */
 html {
