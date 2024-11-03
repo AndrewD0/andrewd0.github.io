@@ -239,6 +239,17 @@ body.index-page{
   font-size:2.2rem;
 }
 
+.project-content h3{
+  font-size: 2rem;
+}
+
+.project-content img {
+  height: auto;
+  display: block;
+  max-width: 60%;
+  margin: 0 auto;
+}
+
 .project-images h2 {
   font-size:2.2rem;
 }
@@ -247,10 +258,11 @@ body.index-page{
 }
 
 .project-images img {
-  width: 100%;
+  max-width: 80%;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  margin: 0 auto;
 }
 
 /* Smooth scroll behavior */
