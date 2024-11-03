@@ -246,7 +246,7 @@ body.index-page{
 .project-content img {
   height: auto;
   display: block;
-  max-width: 60%;
+  max-width: 40%;
   margin: 0 auto;
 }
 
@@ -263,6 +263,13 @@ body.index-page{
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  border: none;
+}
+
+.image-row{
+  display: flex;
+  justify-content: center;
+  gap: 0rem;
 }
 
 /* Smooth scroll behavior */
