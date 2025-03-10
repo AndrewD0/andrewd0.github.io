@@ -1,4 +1,4 @@
-/* Font Styling */
+/* Font styling. */
 @font-face{
   font-family: 'Inter-Regular';
   src: url('/assets/fonts/Inter-4.0/extras/ttf/Inter-Regular.ttf') format('truetype'); /* Adjust the path and format based on your file */
@@ -28,7 +28,7 @@ b, strong{
   color: #386cbc;
 }
 
-/* General styling */
+/* General styling. */
 body{
   font-family: 'Inter-Medium';
   margin: 0;
@@ -44,13 +44,156 @@ body{
   color: #f2f2f2;
 }
 
-/* Separate styling for the landing page */
+/* Separate styling for the landing page. */
 body.index-page{
-  background-color: #000;
   font-family: 'Inter-Bold';
 }
 
-/* Navigation bar */
+/* Index blurb styling. */
+.blurb-index{
+  scroll-snap-align: start;
+  position: absolute;
+  width: 50vw;
+  top: 100vh; /* Position it after the graph */
+  left: 50%;
+  transform: translate(-50%, 0%);
+  background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
+  padding: 2rem;
+  font-size: large;
+}
+
+/* About me page styling.*/
+.about-me{
+  font-family: 'Inter-Bold';
+  margin-top: 20rem;
+  font-size: 3rem;
+
+}
+
+/* Projects Grid */
+.projects-header{
+  font-family: 'Inter-Bold';
+  color: #f2f2f2;
+  text-decoration: none; 
+  font-size: 3rem; 
+  transition: color 0.3s ease; 
+  margin-top: 8rem;
+}
+
+.projects-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+  
+.project-item{
+  padding: 15px;
+  border: 3px solid #272727;
+  border-radius: 8px;
+  background-color: #181818;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  height: 350px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.project-item a{
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+.project-item h3{
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+  color: #f2f2f2;
+  font-family: 'Inter-Bold';
+}
+  
+.project-item p{
+  font-size: 1rem;
+  color: #80868B;
+  font-family: 'Inter-Bold';
+}
+
+.project-item:hover{
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow */
+}
+  
+.project-item img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* Project pages styling. */
+.project-documentation{
+  padding: 0 5rem;
+  margin: 5rem auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.project-title h1{
+  font-size: 2.5rem;
+  font-family: 'Inter-Bold';
+}
+
+.project-title ul{
+  font-size: 1.4rem;
+}
+
+.project-title h2 {
+  font-size: 2.2rem;
+}
+
+.project-content h2 {
+  font-size:2.2rem;
+}
+
+.project-content h3{
+  font-size: 2rem;
+}
+
+.project-content img{
+  height: auto;
+  display: block;
+  max-width: 40%;
+  margin: 0 auto;
+}
+
+.project-images h2{
+  font-size:2.2rem;
+}
+.project-images {
+  margin-top: 2rem;
+}
+
+.project-images img{
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border: none;
+}
+
+.image-row{
+  display: flex;
+  justify-content: center;
+  gap: 0rem;
+}
+
+
+/* Navigation bar. */
 .navbar{
   position: absolute;
   display: flex;
@@ -117,7 +260,7 @@ body.index-page{
   }
 }
 
-/* 3D graph styling */
+/* 3D graph styling. */
 #3d-graph{
   background-color: #111111;
   width: 100vw;
@@ -128,149 +271,6 @@ body.index-page{
   z-index: -1; /* The graph stays behind other content */
   overflow: hidden;
   box-sizing: border-box;
-}
-
-/* About section landing page styling */
-.about-me-index{
-  scroll-snap-align: start;
-  position: absolute;
-  width: 50vw;
-  top: 100vh; /* Position it after the graph */
-  left: 50%;
-  transform: translate(-50%, 0%);
-  background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
-  padding: 2rem;
-  font-size: large;
-}
-
-
-/* About me */
-.about-me{
-  font-family: 'Inter-Bold';
-  margin-top: 20rem;
-  font-size: 3rem;
-
-}
-
-/* Projects Grid */
-.projects-header{
-  font-family: 'Inter-Bold';
-  color: #f2f2f2;
-  text-decoration: none; 
-  font-size: 3rem; 
-  transition: color 0.3s ease; 
-  margin-top: 8rem;
-}
-.projects-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-  
-.project-item{
-  padding: 15px;
-  border: 3px solid #272727;
-  border-radius: 8px;
-  background-color: #181818;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  height: 350px;
-  width: 300px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-}
-
-.project-item a{
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-  width: 100%;
-  display: block;
-}
-
-.project-item h3{
-  margin: 10px 0 5px;
-  font-size: 1.2rem;
-  color: #f2f2f2;
-  font-family: 'Inter-Bold';
-}
-  
-.project-item p{
-  font-size: 1rem;
-  color: #80868B;
-  font-family: 'Inter-Bold';
-}
-
-.project-item:hover{
-  transform: scale(1.05); /* Slightly increase size */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow */
-}
-  
-.project-item img{
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* Projects */
-.project-documentation{
-  padding: 0 5rem;
-  margin: 5rem auto 2rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.project-title h1{
-  font-size: 2.5rem;
-  font-family: 'Inter-Bold';
-}
-
-.project-title ul{
-  font-size: 1.4rem;
-}
-
-.project-title h2 {
-  font-size: 2.2rem;
-}
-
-.project-content h2 {
-  font-size:2.2rem;
-}
-
-.project-content h3{
-  font-size: 2rem;
-}
-
-.project-content img{
-  height: auto;
-  display: block;
-  max-width: 40%;
-  margin: 0 auto;
-}
-
-.project-images h2{
-  font-size:2.2rem;
-}
-.project-images {
-  margin-top: 2rem;
-}
-
-.project-images img{
-  max-width: 80%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border: none;
-}
-
-.image-row{
-  display: flex;
-  justify-content: center;
-  gap: 0rem;
 }
 
 /* Smooth scroll behavior */
