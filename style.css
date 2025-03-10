@@ -1,47 +1,47 @@
-/*Font Styling*/
-@font-face {
+/* Font Styling */
+@font-face{
   font-family: 'Inter-Regular';
   src: url('/assets/fonts/Inter-4.0/extras/ttf/Inter-Regular.ttf') format('truetype'); /* Adjust the path and format based on your file */
 }
 
-@font-face {
+@font-face{
   font-family: 'Inter-Black';
   src: url('/assets/fonts/Inter-4.0/extras/ttf/Inter-Black.ttf') format('truetype');
 }
 
-@font-face {
+@font-face{
   font-family: 'Inter-Bold';
   src: url('/assets/fonts/Inter-4.0/extras/ttf/Inter-Bold.ttf') format('truetype');
 }
 
-@font-face {
+@font-face{
   font-family: 'Inter-Medium';
   src: url('assets/fonts/Inter-4.0/extras/ttf/Inter-Medium.ttf');
 }
 
-@font-face {
+@font-face{
   font-family: 'Blonde';
   src: url(/assets/fonts/Blonde.otf) format('opentype');
 }
 
+b, strong{
+  color: #386cbc;
+}
+
 /* General styling */
-body {
+body{
   font-family: 'Inter-Medium';
   margin: 0;
   padding: 0;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: #111111;
+  background: #000000;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   color: #f2f2f2;
-}
-
-b, strong{
-  color: #386cbc;
 }
 
 /* Separate styling for the landing page */
@@ -51,7 +51,7 @@ body.index-page{
 }
 
 /* Navigation bar */
-.navbar {
+.navbar{
   position: absolute;
   display: flex;
   flex-wrap: nowrap;
@@ -62,13 +62,14 @@ body.index-page{
   z-index: 10;
   height: 60px;
     
-  * {
+  *{
     background-color: rgba(0,0,0,0);
     color: #f2f2f2;
     text-decoration: none;
     font-size: 1.5rem;
   }
-  .logo {
+
+  .logo{
     flex-grow: 2;
     display: flex;
     align-items: baseline;
@@ -95,7 +96,7 @@ body.index-page{
     }
   }
   
-  .links {
+  .links{
     flex-grow: 0;
     display: flex;
     font-family: 'Inter-Black';
@@ -103,7 +104,7 @@ body.index-page{
     margin-right: 4rem;
     align-items: baseline;
       
-    a {
+    a{
       padding: 0.5rem;
       transition: text-shadow 0.3s ease;  
       color: #f2f2f2;
@@ -117,7 +118,7 @@ body.index-page{
 }
 
 /* 3D graph styling */
-#3d-graph {
+#3d-graph{
   background-color: #111111;
   width: 100vw;
   height: 120vh;
@@ -130,7 +131,7 @@ body.index-page{
 }
 
 /* About section landing page styling */
-.about-me-index {
+.about-me-index{
   scroll-snap-align: start;
   position: absolute;
   width: 50vw;
@@ -151,8 +152,8 @@ body.index-page{
 
 }
 
-/*Projects Grid*/
-.projects-header {
+/* Projects Grid */
+.projects-header{
   font-family: 'Inter-Bold';
   color: #f2f2f2;
   text-decoration: none; 
@@ -160,7 +161,7 @@ body.index-page{
   transition: color 0.3s ease; 
   margin-top: 8rem;
 }
-.projects-grid {
+.projects-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
@@ -168,7 +169,7 @@ body.index-page{
   margin-bottom: 2rem;
 }
   
-.project-item {
+.project-item{
   padding: 15px;
   border: 3px solid #272727;
   border-radius: 8px;
@@ -181,7 +182,7 @@ body.index-page{
   position: relative;
 }
 
-.project-item a {
+.project-item a{
   color: inherit;
   text-decoration: none;
   height: 100%;
@@ -189,25 +190,25 @@ body.index-page{
   display: block;
 }
 
-.project-item h3 {
+.project-item h3{
   margin: 10px 0 5px;
   font-size: 1.2rem;
   color: #f2f2f2;
   font-family: 'Inter-Bold';
 }
   
-.project-item p {
+.project-item p{
   font-size: 1rem;
   color: #80868B;
   font-family: 'Inter-Bold';
 }
 
-.project-item:hover {
+.project-item:hover{
   transform: scale(1.05); /* Slightly increase size */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow */
 }
   
-.project-item img {
+.project-item img{
   width: 100%;
   height: 200px;
   object-fit: cover;
@@ -215,19 +216,19 @@ body.index-page{
 }
 
 /* Projects */
-.project-documentation {
+.project-documentation{
   padding: 0 5rem;
   margin: 5rem auto 2rem;
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
-.project-title h1 {
+.project-title h1{
   font-size: 2.5rem;
   font-family: 'Inter-Bold';
 }
 
-.project-title ul {
+.project-title ul{
   font-size: 1.4rem;
 }
 
@@ -243,21 +244,21 @@ body.index-page{
   font-size: 2rem;
 }
 
-.project-content img {
+.project-content img{
   height: auto;
   display: block;
   max-width: 40%;
   margin: 0 auto;
 }
 
-.project-images h2 {
+.project-images h2{
   font-size:2.2rem;
 }
 .project-images {
   margin-top: 2rem;
 }
 
-.project-images img {
+.project-images img{
   max-width: 80%;
   height: auto;
   object-fit: contain;
@@ -273,11 +274,11 @@ body.index-page{
 }
 
 /* Smooth scroll behavior */
-html {
+html{
   scroll-behavior: smooth;
 }
 
-#transition_bottom {
+#transition_bottom{
   position: absolute;
   top: 90vh;
   width: 100vw;
@@ -287,7 +288,7 @@ html {
 }
 
 /* Optional scrollbar styling */
-::-webkit-scrollbar {
+::-webkit-scrollbar{
   width: 8px;
 }
 ::-webkit-scrollbar-track {
