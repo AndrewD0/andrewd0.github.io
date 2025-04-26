@@ -36,12 +36,17 @@ body{
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: #000000;
+  background: #121212 ;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   color: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Separate styling for the landing page. */
@@ -54,23 +59,56 @@ body.index-page{
   scroll-snap-align: start;
   position: absolute;
   width: 50vw;
-  top: 100vh; /* Position it after the graph */
+  top: 100vh; /* Position it after the graph. */
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind */
+  background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind. */
   padding: 2rem;
   font-size: large;
 }
 
-/* About me page styling.*/
+/* About me page styling. */
 .about-me{
-  font-family: 'Inter-Bold';
-  margin-top: 20rem;
+  margin-top: 10rem;
   font-size: 3rem;
-
 }
 
-/* Projects Grid */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80vw;
+  max-width: 1200px;
+  gap: 5rem;
+}
+
+.about-photo {
+  flex: 1;
+  max-width: 400px;
+  height: 400px;
+  background-image: url('assets/images/andrew.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.4rem;
+  color: #f2f2f2;
+  margin-top: 2rem;
+}
+
+.about-text h1 {
+  font-family: 'Inter-Black';
+  font-size: 3rem;
+  margin: 0;
+}
+
+/* Projects grid. */
 .projects-header{
   font-family: 'Inter-Bold';
   color: #f2f2f2;
@@ -262,7 +300,6 @@ body.index-page{
 
 /* 3D graph styling. */
 #3d-graph{
-  background-color: #111111;
   width: 100vw;
   height: 120vh;
   position: fixed;
@@ -273,30 +310,33 @@ body.index-page{
   box-sizing: border-box;
 }
 
-/* Smooth scroll behavior */
-html{
-  scroll-behavior: smooth;
-}
-
 #transition_bottom{
   position: absolute;
   top: 90vh;
   width: 100vw;
-  height: 10vh; /* Adjust height if needed */
-  background-image: linear-gradient(to top, #000, rgba(17, 17, 17, 0)); /* Gradual fade from transparent to #111111 */
-  z-index: 1; /* Ensure it's above the 3D graph */
+  height: 10vh;
+  background-image: linear-gradient(to top, #121212, rgba(17, 17, 17, 0));
+  z-index: 1; /* Ensure it's above the 3D graph. */
 }
 
-/* Optional scrollbar styling */
+/* Smooth scroll behavior. */
+html{
+  scroll-behavior: smooth;
+}
+
+/* Optional scrollbar styling. */
 ::-webkit-scrollbar{
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(8, 8, 8, 0.0);
+  background: rgba(30, 30, 30, 0.3);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(50, 50, 100, 0.3);
+  background: rgba(80, 80, 80, 0.7);
+  border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(8, 8, 8, 0.5);
+  background: rgba(100, 100, 100, 0.9);
 }

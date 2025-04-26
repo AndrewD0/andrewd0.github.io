@@ -24,7 +24,6 @@
         <li><a href="projects.html"><b>PROJECTS</b></a></li>
         <li><a href="about.html"><b>ABOUT ME</b></a></li>
       </div>
-
     </nav>
 
     <!-- 3D graph -->
@@ -53,7 +52,8 @@
           .nodeColor(() => 'white')  // Set node color
           .nodeOpacity(1)
           .linkOpacity(0.5)
-          .showNavInfo(false);  // Hide navigation instructions
+          .showNavInfo(false)  // Hide navigation instructions
+          .backgroundColor('#000000');
 
       // Camera orbit
       let angle = 0;
@@ -75,11 +75,11 @@
     <div class="blurb-index">
       <h1 id="blurb-index">Hey! My name is Andrew.</h1>
       <p>
-        I am a 4th year <b>engineering physics</b> student studying at the University of British Columbia.
+        I am a 4th year <b><a href="https://www.engphys.ubc.ca/" target="_blank">engineering physics</a></b> student studying at the University of British Columbia.
         <br><br>
-        I am passionate and skilled in working with electrical circuits, machine learning, and hardware design. I'm currently taking courses in PCB design, pure physics, and large-language models.
+        I am passionate and skilled in working with electrical circuits, machine learning, and hardware design. Starting this summer, I'll be interning at <b><a href="https://www.tesla.com/" target="_blank">Tesla</a></b> on their vehicle hardware team.
         <br><br>
-        Above is a visualization of my <b>Obsidian</b> database. Each node represents a specific topic that I have learned in-depth about.
+        Above is a visualization of my <b><a href="https://obsidian.md/" target="_blank">Obsidian</a></b> database. Each node represents a specific topic that I have learned in-depth about.
       </p>
       <p>
         This website contains a working repository of all the projects I’ve worked on to date. I hope you find them interesting!
