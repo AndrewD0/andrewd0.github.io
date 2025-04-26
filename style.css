@@ -44,6 +44,10 @@ body{
   color: #f2f2f2;
 }
 
+main{
+  flex: 1;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -296,6 +300,39 @@ body.index-page{
       color: #fff;
     }
   }
+}
+
+/* Footer styling. */
+.footer {
+  padding: 2rem 0;
+  margin-top: 60vh; /* <- ADD THIS LINE */
+  text-align: center;
+  font-family: 'Inter-Medium';
+  background: #121212;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem; /* space between icons and text */
+}
+
+.social-icons img {
+  width: 48px;
+  height: 48px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: brightness(0.7);
+}
+
+.social-icons img:hover {
+  filter: brightness(1.5) drop-shadow(0 0 6px #386cbc);
+  transform: scale(1.1);
+}
+
+.footer p {
+  color: #888;
+  font-size: 0.9rem;
 }
 
 /* 3D graph styling. */
