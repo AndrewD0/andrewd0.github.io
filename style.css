@@ -50,6 +50,10 @@ a {
 }
 
 /* Index blurb styling. */
+.index-page{
+  background-color: (0,0,0,0);
+}
+
 .blurb-index{
   scroll-snap-align: start;
   position: absolute;

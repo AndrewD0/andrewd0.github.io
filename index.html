@@ -30,7 +30,7 @@
 
     <script>
       // Random tree data for 3D force graph
-      const N = 400;  
+      const N = 800;  
       const gData = {
         nodes: [...Array(N).keys()].map(i => ({ id: i })),
         links: [...Array(N).keys()]
@@ -41,7 +41,7 @@
           }))
       };
 
-      const distance = 2000;
+      const distance = 3000;
       const Graph = ForceGraph3D()
         (document.getElementById('3d-graph'))
           .graphData(gData)
@@ -65,10 +65,6 @@
         angle += Math.PI / 3600; 
       }, 50);
     </script>
-
-    <div id="transition_bottom">
-      <h1></h1>
-    </div>
 
     <!-- About me section -->
     <div class="blurb-index">
