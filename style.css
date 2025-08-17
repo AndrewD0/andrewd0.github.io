@@ -24,10 +24,6 @@
   src: url(/assets/fonts/Blonde.otf) format('opentype');
 }
 
-b, strong{
-  color: #386cbc;
-}
-
 /* General styling. */
 body{
   font-family: 'Inter-Medium';
@@ -36,7 +32,7 @@ body{
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   overflow-x: hidden;
-  background: #121212 ;
+  background: #0d0d0d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,18 +40,13 @@ body{
   color: #f2f2f2;
 }
 
-main{
-  flex: 1;
+b, strong{
+  color: #386cbc;
 }
 
 a {
   text-decoration: none;
   color: inherit;
-}
-
-/* Separate styling for the landing page. */
-body.index-page{
-  font-family: 'Inter-Bold';
 }
 
 /* Index blurb styling. */
@@ -66,7 +57,6 @@ body.index-page{
   top: 100vh; /* Position it after the graph. */
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: rgba(0, 0, 0, 0); /* Transparent to show graph behind. */
   padding: 2rem;
   font-size: large;
 }
@@ -236,91 +226,84 @@ body.index-page{
 
 
 /* Navigation bar. */
-.navbar{
+.navbar {
   position: absolute;
-  display: flex;
-  flex-wrap: nowrap;
+  top: 10px;
   width: 100vw;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  z-index: 10;
   height: 60px;
-    
-  *{
-    background-color: rgba(0,0,0,0);
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: 1.5rem;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* vertically center everything */
+  padding: 0 4rem;    /* horizontal spacing */
+  z-index: 10;
+  background-color: transparent;
+}
 
-  .logo{
-    flex-grow: 2;
-    display: flex;
-    align-items: baseline;
-    font-family: 'Blonde';
-    margin-left: 4rem;
+/* Logo styling */
+.navbar .logo {
+  display: flex;
+  align-items: center; /* vertically center text */
+  font-family: 'Blonde';
+  padding: 4rem;
+}
 
-    a{
-      transition: text-shadow 0.3s ease;
-      color: #f2f2f2;
-    }
+.navbar .logo a {
+  color: #f2f2f2;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+  font-size: 1.5rem;
+}
 
-    a:hover{
-      text-shadow: 0 0 2px rgba(255, 255, 255, 0.3), 0 0 4px rgba(255, 255, 255, 0.2);; 
-      color: #fff;
-    }
-      
-    .first{
-      margin-right: 0.5rem;
-    }
-      
-    > * {
-      padding: 0.5rem;
-      display: block;
-    }
-  }
-  
-  .links{
-    flex-grow: 0;
-    display: flex;
-    font-family: 'Inter-Black';
-    list-style-type: none;
-    margin-right: 4rem;
-    align-items: baseline;
-      
-    a{
-      padding: 0.5rem;
-      transition: text-shadow 0.3s ease;  
-      color: #f2f2f2;
-    }
+.navbar .logo a:hover {
+  text-shadow: 0 0 2px rgba(255,255,255,0.3), 0 0 4px rgba(255,255,255,0.2);
+  color: #fff;
+}
 
-    a:hover{
-      text-shadow: 0 0 2px rgba(255, 255, 255, 0.3), 0 0 4px rgba(255, 255, 255, 0.2);;
-      color: #fff;
-    }
-  }
+.navbar .logo span.first{
+  margin-right: 0.5rem;
+}
+
+/* Links styling */
+.navbar .links {
+  display: flex;
+  align-items: center; /* vertically center links */
+  gap: 1rem;           /* space between links */
+  font-size: 1.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 4rem;
+  font-family: 'Inter-Black';
+}
+
+.navbar .links a {
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 0.5rem;
+  transition: text-shadow 0.3s ease;
+}
+
+.navbar .links a:hover {
+  text-shadow: 0 0 2px rgba(255,255,255,0.3), 0 0 4px rgba(255,255,255,0.2);
+  color: #fff;
 }
 
 /* Footer styling. */
 .footer {
-  padding: 2rem 0;
-  margin-top: 60vh; /* <- ADD THIS LINE */
+  padding: 1rem 0.5;
+  margin-top: 70vh;
   text-align: center;
-  font-family: 'Inter-Medium';
-  background: #121212;
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 1rem; /* space between icons and text */
 }
 
 .social-icons img {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px; 
   transition: filter 0.3s ease, transform 0.3s ease;
   filter: brightness(0.7);
 }
@@ -332,14 +315,14 @@ body.index-page{
 
 .footer p {
   color: #888;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 /* 3D graph styling. */
 #3d-graph{
   width: 100vw;
   height: 120vh;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1; /* The graph stays behind other content */
@@ -350,10 +333,11 @@ body.index-page{
 #transition_bottom{
   position: absolute;
   top: 90vh;
-  width: 100vw;
+  left: 0;
   height: 10vh;
-  background-image: linear-gradient(to top, #121212, rgba(17, 17, 17, 0));
-  z-index: 1; /* Ensure it's above the 3D graph. */
+  width: 100vw;
+  color: rgba(0, 0, 0, 0.0);
+  background-image: linear-gradient(to bottom, #0d0d0d, #0d0d0d);
 }
 
 /* Smooth scroll behavior. */

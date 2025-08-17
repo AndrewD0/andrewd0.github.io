@@ -20,9 +20,8 @@
       </div>
 
       <div class = "links">
-        <li><a href="projects.html"><b>PROJECTS</b></a></li>
-        <li><a href="about.html"><b>ABOUT ME</b></a></li>
-        <li><a href="assets/resume/Andrew_s_Official_Resume.pdf" target="_blank"><b>RESUME</b></a></li>
+        <li><a href="projects.html">PROJECTS</a></li>
+        <li><a href="assets/resume/Andrew_s_Official_Resume.pdf" target="_blank">RESUME</a></li>
       </div>
     </nav>
 
@@ -31,7 +30,7 @@
 
     <script>
       // Random tree data for 3D force graph
-      const N = 300;  
+      const N = 400;  
       const gData = {
         nodes: [...Array(N).keys()].map(i => ({ id: i })),
         links: [...Array(N).keys()]
@@ -42,18 +41,18 @@
           }))
       };
 
-      const distance = 1400;
+      const distance = 2000;
       const Graph = ForceGraph3D()
         (document.getElementById('3d-graph'))
           .graphData(gData)
-          .enableNodeDrag(true)
+          .enableNodeDrag(false)
           .enableNavigationControls(false)
           .cameraPosition({ z: distance })
           .nodeColor(() => 'white')  // Set node color
           .nodeOpacity(1)
           .linkOpacity(0.5)
           .showNavInfo(false)  // Hide navigation instructions
-          .backgroundColor('#000000');
+          .backgroundColor('#0d0d0d');
 
       // Camera orbit
       let angle = 0;
