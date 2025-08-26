@@ -1,76 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Projects</title>
-    <link rel="icon" href="assets/favicon/superintendent.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
-  </head>
-  
-  <body>
 
-    <!-- Header -->
-    <nav class="navbar">
-      <div class="logo">
-        <a href="/">
-          <span class="first">andrew's</span>
-          <span class="second">desk</span>
-        </a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrew's Desk</title>
+  <link rel="icon" href="assets/favicon/superintendent.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="//unpkg.com/3d-force-graph"></script>
+</head>
+
+<body class="projects-page">
+  <!-- Header -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">
+        <span class="first">andrew's</span>
+        <span class="second">desk</span>
+      </a>
+    </div>
+
+    <div class="links">
+      <li><a href="projects.html">PROJECTS</a></li>
+      <li><a href="assets/resume/Andrew_s_Official_Resume.pdf" target="_blank">RESUME</a></li>
+    </div>
+  </nav>
+
+  <header>
+    <div class="sorter">
+      <button data-filter="all">All</button>
+      <button data-filter="hardware">Hardware Design</button>
+      <button data-filter="software">Software Design</button>
+    </div>
+  </header>
+
+  <main class="project-list">
+    <div class="project-card" data-category="hardware">
+      <img src="projects/robot-summer/images/robot-gif.gif" alt="Project 1">
+      <div class="project-info">
+        <h2>PCB Design Tool</h2>
+        <div class="tags">
+          <span>Altium</span>
+          <span>Hardware</span>
+        </div>
+        <p>Designed a 4-layer PCB with Altium, tested signal integrity, and integrated power distribution networks.</p>
       </div>
+    </div>
 
-      <div class = "links">
-        <li><a href="projects.html"><b>PROJECTS</b></a></li>
-        <li><a href="about.html"><b>ABOUT ME</b></a></li>
+    <div class="project-card" data-category="software">
+      <img src="projects/motor-controller/images/motor-circuit.jpg  " alt="Project 2">
+      <div class="project-info">
+        <h2>Embedded Motor Controller</h2>
+        <div class="tags">
+          <span>C</span>
+          <span>Embedded Systems</span>
+          <span>PWM</span>
+        </div>
+        <p>Developed firmware to drive a BLDC motor with PWM signals, implemented control loops in C.</p>
       </div>
+    </div>
 
-    </nav>
 
-    <!-- Projects -->
-    <main>
-        <h1 class="projects-header">PROJECTS</h1>
-        <section class="projects-grid">
+    <div class="project-card" data-category="hardware">
+      <img src="projects/enph-353/images/353-images.png" alt="Project 2">
+      <div class="project-info">
+        <h2>Embedded Motor Controller</h2>
+        <div class="tags">
+          <span>C</span>
+          <span>Embedded Systems</span>
+          <span>PWM</span>
+        </div>
+        <p>Developed firmware to drive a BLDC motor with PWM signals, implemented control loops in C.</p>
+      </div>
+    </div>
+  </main>
 
-          <div class="project-item">
-            <a href="projects/ubc-aerodesign/power-distribution-board/pdb.html" target="_self">
-              <img src="projects/ubc-aerodesign/power-distribution-board/images/pdb.jpg" alt="PDB Image">
-              <h3>Power Distribution Board PCB</h3>
-              <p>Designed and manufactured a power distribution board for the avionics system at UBC AeroDesign.</p>
-            </a>
-          </div>
+  <script>
+    const buttons = document.querySelectorAll('.sorter button');
+    const projects = document.querySelectorAll('.project-card');
 
-          <div class="project-item">
-            <a href="projects/enph-353/enph353.html" target="_self">
-              <img src="projects/enph-353/images/enph353.png" alt="ENPH 353 Image">
-              <h3>Virtual Self-Driving Car</h3>
-              <p>Project course focused on developing a self-driving car using machine learning.</p>
-            </a>
-          </div>
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        buttons.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked button
+        button.classList.add('active');
 
-          <div class="project-item">
-            <a href="projects/ubc-aerodesign/wiring-hub/wiring-hub.html" target="_self">
-              <img src="projects/ubc-aerodesign/wiring-hub/images/wiring-hub.jpg" alt="Wiring Hub Image">
-              <h3>Wiring Hub PCB</h3>
-              <p>Designed and manufactured a wiring hub PCB for a plane power system as part of UBC AeroDesign.</p>
-            </a>
-          </div>
+        const filter = button.getAttribute('data-filter');
 
-          <div class="project-item">
-            <a href="projects/robot-summer/robot-summer.html" target="_self">
-              <img src="projects/robot-summer/images/robot-gif.gif" alt="ENPH 353 Image">
-              <h3>Autonomous Robot Racing Competition</h3>
-              <p>In six weeks, designed a line-following robot to compete in a Mario-themed racing competition.</p>
-            </a>
-          </div>
+        projects.forEach(project => {
+          if (filter === 'all' || project.getAttribute('data-category') === filter) {
+            project.style.visibility = 'visible';
+            project.style.position = 'relative';
+          } else {
+            project.style.visibility = 'hidden';
+            project.style.position = 'absolute';
+          }
+        });
+      });
+    });
+  </script>
+</body>
 
-          <div class="project-item">
-            <a href="projects/motor-controller/motor-controller.html" target="_self">
-              <img src="projects/motor-controller/images/motor-circuit.jpg" alt="Motor Controller Image">
-              <h3>Closed-Loop Motor Speed Controller</h3>
-              <p>Designed a feedback control circuit to adjust and monitor the speed of a DC motor.</p>
-            </a>
-          </div>
-
-        </section>
-      </main>
-  </body>
 </html>
