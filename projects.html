@@ -35,42 +35,71 @@
   </header>
 
   <main class="project-list">
-    <div class="project-card" data-category="hardware">
-      <img src="projects/robot-summer/images/robot-gif.gif" alt="Project 1">
+
+    <div class="project-card" data-category="hardware"
+      data-link="projects/ubc-aerodesign/power-distribution-board/pdb.html">
+      <img src="projects/ubc-aerodesign/power-distribution-board/images/pdb.jpg" alt="PDB">
       <div class="project-info">
-        <h2>PCB Design Tool</h2>
+        <h2>Power Distribution Board PCB</h2>
         <div class="tags">
           <span>Altium</span>
-          <span>Hardware</span>
+          <span>Circuit Design</span>
+          <span>Oscilloscopes</span>
         </div>
-        <p>Designed a 4-layer PCB with Altium, tested signal integrity, and integrated power distribution networks.</p>
+        <p>Designed and brought up a power distribution board for the avionics system at UBC AeroDesign.</p>
       </div>
     </div>
 
-    <div class="project-card" data-category="software">
-      <img src="projects/motor-controller/images/motor-circuit.jpg  " alt="Project 2">
+    <div class="project-card" data-category="hardware" data-link="projects/ubc-aerodesign/wiring-hub/wiring-hub.html">
+      <img src="projects/ubc-aerodesign/wiring-hub/images/wiring-hub.jpg" alt="PDB">
       <div class="project-info">
-        <h2>Embedded Motor Controller</h2>
+        <h2>Wiring Hub PCB</h2>
         <div class="tags">
-          <span>C</span>
-          <span>Embedded Systems</span>
-          <span>PWM</span>
+          <span>Altium</span>
+          <span>Circuit Design</span>
+          <span>Oscilloscopes</span>
         </div>
-        <p>Developed firmware to drive a BLDC motor with PWM signals, implemented control loops in C.</p>
+        <p>Designed and manufactured a wiring hub PCB for a plane power system as part of UBC AeroDesign</p>
       </div>
     </div>
 
-
-    <div class="project-card" data-category="hardware">
-      <img src="projects/enph-353/images/353-images.png" alt="Project 2">
+    <div class="project-card" data-category="software" data-link="projects/enph353/enph353.html">
+      <img src="projects/enph353/images/353-images.png" alt="ENPH 353">
       <div class="project-info">
-        <h2>Embedded Motor Controller</h2>
+        <h2>Virtual Self-Driving Car</h2>
         <div class="tags">
-          <span>C</span>
-          <span>Embedded Systems</span>
-          <span>PWM</span>
+          <span>Machine Learning</span>
+          <span>OpenCV</span>
+          <span>Python</span>
+          <span>ROS</span>
         </div>
-        <p>Developed firmware to drive a BLDC motor with PWM signals, implemented control loops in C.</p>
+        <p>Project course focused on developing a self-driving car using machine learning.</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="hardware,software" data-link="projects/robot-summer/robot-summer.html">
+      <img src="projects/robot-summer/images/robot-gif.gif" alt="Robots">
+      <div class="project-info">
+        <h2>Autonomous Robot Racing</h2>
+        <div class="tags">
+          <span>Circuit Design</span>
+          <span>CAD</span>
+          <span>Embedded Systems</span>
+          <span>C++</span>
+        </div>
+        <p>In six weeks, designed a line-following robot to compete in a Mario-themed racing competition.</p>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="hardware" data-link="projects/motor-controller/motor-controller.html">
+      <img src="projects/motor-controller/images/motor-circuit.jpg" alt="Breadboard ">
+      <div class="project-info">
+        <h2>Closed-Loop Motor Speed Controller</h2>
+        <div class="tags">
+          <span>Circuit Design</span>
+          <span>Oscilloscopes</span>
+        </div>
+        <p>Designed a feedback control circuit to adjust and monitor the speed of a DC motor.</p>
       </div>
     </div>
   </main>
@@ -89,7 +118,8 @@
         const filter = button.getAttribute('data-filter');
 
         projects.forEach(project => {
-          if (filter === 'all' || project.getAttribute('data-category') === filter) {
+          const categories = project.dataset.category.split(',');
+          if (filter === 'all' || categories.includes(filter)) {
             project.style.visibility = 'visible';
             project.style.position = 'relative';
           } else {
@@ -99,6 +129,16 @@
         });
       });
     });
+  </script>
+
+  <script>
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.link;
+      });
+    });
+
   </script>
 </body>
 
