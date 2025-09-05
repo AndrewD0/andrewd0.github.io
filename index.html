@@ -1,97 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andrew's Desk</title>
-    <link rel="icon" href="assets/favicon/superintendent.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <script src="//unpkg.com/3d-force-graph"></script>
-  </head>
-  
-  <body class = "index-page">
-    <!-- Header -->
-    <nav class="navbar">
-      <div class="logo">
-        <a href="/">
-          <span class="first">andrew's</span>
-          <span class="second">desk</span>
-        </a>
-      </div>
 
-      <div class = "links">
-        <li><a href="projects.html">PROJECTS</a></li>
-        <li><a href="assets/resume/Andrew_s_Official_Resume.pdf" target="_blank">RESUME</a></li>
-      </div>
-    </nav>
+<head>
+  <script src="js/head.js"></script>
+  <script src="//unpkg.com/3d-force-graph"></script>
+</head>
 
-    <!-- 3D graph -->
-    <div id="3d-graph"></div>
+<body class="index-page">
+  <!-- Header -->
+  <script src="js/navbar.js"></script>
 
-    <script>
-      // Random tree data for 3D force graph
-      const N = 900;  
-      const gData = {
-        nodes: [...Array(N).keys()].map(i => ({ id: i })),
-        links: [...Array(N).keys()]
-          .filter(id => id)
-          .map(id => ({
-            source: id,
-            target: Math.round(Math.random() * (id - 1))
-          }))
-      };
+  <!-- 3D graph -->
+  <div id="3d-graph"></div>
 
-      const distance = 3000;
-      const Graph = ForceGraph3D()
-        (document.getElementById('3d-graph'))
-          .graphData(gData)
-          .enableNodeDrag(false)
-          .enableNavigationControls(false)
-          .cameraPosition({ z: distance })
-          .nodeColor(() => 'white')  // Set node color
-          .nodeOpacity(1)
-          .linkOpacity(0.5)
-          .showNavInfo(false)  // Hide navigation instructions
-          .backgroundColor('#0d0d0d');
+  <script>
+    // Random tree data for 3D force graph
+    const N = 900;
+    const gData = {
+      nodes: [...Array(N).keys()].map(i => ({ id: i })),
+      links: [...Array(N).keys()]
+        .filter(id => id)
+        .map(id => ({
+          source: id,
+          target: Math.round(Math.random() * (id - 1))
+        }))
+    };
 
-      // Camera orbit
-      let angle = 0;
+    const distance = 3000;
+    const Graph = ForceGraph3D()
+      (document.getElementById('3d-graph'))
+      .graphData(gData)
+      .enableNodeDrag(false)
+      .enableNavigationControls(false)
+      .cameraPosition({ z: distance })
+      .nodeColor(() => 'white')  // Set node color
+      .nodeOpacity(1)
+      .linkOpacity(0.5)
+      .showNavInfo(false)  // Hide navigation instructions
+      .backgroundColor('#0d0d0d');
 
-      setInterval(() => {
-        Graph.cameraPosition({
-          x: distance * Math.sin(angle),
-          z: distance * Math.cos(angle)
-        });
-        angle += Math.PI / 3600; 
-      }, 50);
-    </script>
+    // Camera orbit
+    let angle = 0;
 
-    <!-- About me section -->
-    <div class="blurb-index">
-      <h1 id="blurb-index">Hey! My name is Andrew.</h1>
-      <p>
-        I am a 4th year <b><a href="https://www.engphys.ubc.ca/" target="_blank">engineering physics</a></b> student studying at the University of British Columbia.
-        <br><br>
-        I am passionate and skilled in working with electrical circuits, machine learning, and hardware design. I am currently interning at <b><a href="https://www.tesla.com/" target="_blank">Tesla</a></b> on their vehicle hardware team.
-        <br><br>
-        Above is a visualization of my <b><a href="https://obsidian.md/" target="_blank">Obsidian</a></b> database. Each node represents a specific topic that I have learned in-depth about.
-      </p>
-      <p>
-        This website contains a working repository of all the projects I’ve worked on to date. I hope you find them interesting!
-      </p>
+    setInterval(() => {
+      Graph.cameraPosition({
+        x: distance * Math.sin(angle),
+        z: distance * Math.cos(angle)
+      });
+      angle += Math.PI / 3600;
+    }, 50);
+  </script>
+
+  <!-- About me section -->
+  <div class="blurb-index">
+    <h1 id="blurb-index">Hey! My name is Andrew.</h1>
+    <p>
+      I am a 4th year <b><a href="https://www.engphys.ubc.ca/" target="_blank">engineering physics</a></b> student
+      studying at the University of British Columbia.
+      <br><br>
+      I am passionate and skilled in working with electrical circuits, machine learning, and hardware design. I am
+      currently interning at <b><a href="https://www.tesla.com/" target="_blank">Tesla</a></b> on their vehicle hardware
+      team.
+      <br><br>
+      Above is a visualization of my <b><a href="https://obsidian.md/" target="_blank">Obsidian</a></b> database. Each
+      node represents a specific topic that I have learned in-depth about.
+    </p>
+    <p>
+      This website contains a working repository of all the projects I’ve worked on to date. I hope you find them
+      interesting!
+    </p>
+  </div>
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="https://github.com/AndrewD0" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/github.svg" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/andrewdubc" target="_blank" rel="noopener noreferrer">
+        <img src="assets/images/linkedin.svg" alt="LinkedIn">
+      </a>
     </div>
+    <p class="copyright">© Andrew Du - 2025</p>
+  </footer>
 
-    <footer class="footer">
-      <div class="social-icons">
-        <a href="https://github.com/AndrewD0" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/github.svg" alt="GitHub">
-        </a>
-        <a href="https://linkedin.com/in/andrewdubc" target="_blank" rel="noopener noreferrer">
-          <img src="assets/images/linkedin.svg" alt="LinkedIn">
-        </a>
-      </div>
-      <p class="copyright">© Andrew Du - 2025</p>
-    </footer>
+</body>
 
-  </body>
 </html>
