@@ -8,8 +8,8 @@ document.body.insertAdjacentHTML('afterbegin', `
     </div>
 
     <div class="links">
-      <li><a href="projects.html">PROJECTS</a></li>
-      <li><a href="assets/resume/Andrew_s_Official_Resume.pdf" target="_blank">RESUME</a></li>
+      <li><a href="/projects.html">PROJECTS</a></li>
+      <li><a href="/assets/resume/Andrew_s_Official_Resume.pdf" target="_blank">RESUME</a></li>
     </div>
   </nav>
 `);

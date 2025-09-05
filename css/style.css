@@ -235,6 +235,39 @@ header {
   color: #fff;
 }
 
+/* Projects information. */
+
+main.project-documentation {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding: 6rem 1rem 1rem;
+  font-size: 1rem;
+}
+
+.project-documentation h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-documentation h2 {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.project-documentation ul {
+  margin-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-documentation iframe {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 1rem auto; /* centers and adds spacing */
+  border: 0.1rem solid #333;
+  border-radius: 0.3rem;
+}
+
 /* Footer styling. */
 .footer {
   padding: 1rem 0.5;
