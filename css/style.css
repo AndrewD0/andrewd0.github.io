@@ -185,12 +185,14 @@ main.project-documentation {
 .project-documentation h1 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   position: relative;
 }
 
 .project-documentation h2 {
   font-size: 1.4rem;
   margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   position: relative;
   
 }
@@ -219,7 +221,7 @@ main.project-documentation {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1rem 0; /* optional spacing */
+  margin: 2rem auto; /* optional spacing */
   border: 0.2rem solid #313131;    /* dark border */
   border-radius: 0.3rem;
 }

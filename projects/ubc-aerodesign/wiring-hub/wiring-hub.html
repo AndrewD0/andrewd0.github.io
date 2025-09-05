@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiring Hub</title>
-    <link rel="icon" href="../../../assets/favicon/superintendent.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../../style.css">
-  </head>
-  
-  <body>
-    <!-- Header -->
-    <nav class="navbar">
-      <div class="logo">
-        <a href="/">
-          <span class="first">andrew's</span>
-          <span class="second">desk</span>
-        </a>
-      </div>
-      <div class="links">
-        <li><a href="../../../projects.html"><b>PROJECTS</b></a></li>
-        <li><a href="../../../about.html"><b>ABOUT ME</b></a></li>
-      </div>
-    </nav>
 
-    <!-- Content -->
-    <main class="project-documentation">
-      <section class="project-title">
-        <h1>Wiring Hub</h1>
+<head>
+  <script src="/js/head.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <script src="/js/navbar.js"></script>
+
+  <!-- Content -->
+  <main class="project-documentation">
+    <div class="project-sections">
+      <h1> UBC AeroDesign Wiring Hub</h1>
+
+      <section id="project-images">
+        <h2>Project Images:</h2>
+        <img src="images/wiring-hub-images.png">
+      </section>
+
+      <section id="learning">
         <h2>Learning:</h2>
         <ul>
           <li>PCB design using Altium.</li>
@@ -35,57 +28,59 @@
         </ul>
       </section>
 
-      <section class="project-images">
-        <h2>Project Images:</h2>
-        <img src="images/wiring-hub-images.png">
+      <section id="project-overview">
+        <h2>Project Overview</h2>
+        <p>As part of my role on the avionics team at <b>UBC AeroDesign</b>, I designed a wiring hub PCB for
+          centralizing
+          the power distribution,
+          sensor modules, and other peripheral components of the plane. Through this project, I:
+        <ul>
+          <li>used <b>Altium</b> to design a comprehensive two-layered PCB able to interact with external hardware
+            elements: outlined schematic, component selection.</li>
+          <li>assembled a PCB through hand-soldering and conducted hardware troubleshooting tests.</li>
+        </ul>
+        </p>
       </section>
 
-      <section class="project-content">
-        <h2>Project Overview</h2>
-        <p>As part of my role on the avionics team at <b>UBC AeroDesign</b>, I designed a wiring hub PCB for centralizing the power distribution,
-          sensor modules, and other peripheral components of the plane. Through this project, I:
-          <ul>
-            <li>used <b>Altium</b> to design a comprehensive two-layered PCB able to interact with external hardware elements: outlined schematic, component selection.</li>
-            <li>assembled a PCB through hand-soldering and conducted hardware troubleshooting tests.</li>
-          </ul>
-        </p>
-
-        <h3>Background</h3>
+      <section id="background">
+        <h2>Background</h2>
         <p>
-          The planes that UBC AeroDesign builds utilizes 10+ different sensors, control surface connections, and other peripheral components. In the past, power and communication was
-          diverted to these components individually, leading to an extremely cluttered electrical wiring setup. The wiring hub PCB I designed aims to fix this issue.
+          The planes that UBC AeroDesign builds utilizes 10+ different sensors, control surface connections, and other
+          peripheral components. In the past, power and communication was
+          diverted to these components individually, leading to an extremely cluttered electrical wiring setup. The
+          wiring
+          hub PCB I designed aims to fix this issue.
           <br><br>
           Below is an image of the electrical wiring on the plane before the wiring hub. Very messy!
         </p>
 
         <img src="images/wiring-hub-before.png">
-        
+
         <p>
-          The wiring hub acts as the "motherboard" of the plane: power and communication to every component on the plane is distributed from this PCB. Moreover, the wiring hub acts as a housing surface
-          for other electrical components. These include the <b>Cube Orange</b> flight controller, a step-down power distribution board, and a sensor board for communication and sensor functionality. As a result,
+          The wiring hub acts as the "motherboard" of the plane: power and communication to every component on the plane
+          is distributed from this PCB. Moreover, the wiring hub acts as a housing surface
+          for other electrical components. These include the <b>Cube Orange</b> flight controller, a step-down power
+          distribution board, and a sensor board for communication and sensor functionality. As a result,
           the wiring hub serves as a centralized base where all the electronics of the plane are mounted.
         </p>
 
         <img src="images/sketch-hub.jpg">
 
         <p>
-          Above is a rough sketch of how the wiring hub was envisioned to look. The Cube Orange is mounted on the wiring hub while the power distribution board is soldered on. The sensor board would be attached on top using pin headers.
-          Moreover, there would be various JST headers for connections to the sensor modules, control surfaces, and other peripherals.
+          Above is a rough sketch of how the wiring hub was envisioned to look. The Cube Orange is mounted on the wiring
+          hub while the power distribution board is soldered on. The sensor board would be attached on top using pin
+          headers.
+          Moreover, there would be various JST headers for connections to the sensor modules, control surfaces, and
+          other
+          peripherals.
         </p>
-
-        <h3>Design</h3>
-
-        <div class="image-row">
-          <img src="images/wiring-hub-capture.jpg">
-          <img src="images/wiring-hub-3d.jpg">
-        </div>
-        <p>
-          
-        </p>
-
-        <h3>Manufacturing and Testing</h3>
-        
       </section>
-    </main>
-  </body>
+
+      <section id="design">
+        <h2>Design</h2>
+      </section>
+
+    </div>
+  </main>
+</body>
 </html>
