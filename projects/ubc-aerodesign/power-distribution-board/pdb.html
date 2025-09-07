@@ -1,46 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Distribution Board</title>
-    <link rel="icon" href="../../../assets/favicon/superintendent.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../../../style.css">
-  </head>
-  
-  <body>
-    <!-- Header -->
-    <nav class="navbar">
-      <div class="logo">
-        <a href="/">
-          <span class="first">andrew's</span>
-          <span class="second">desk</span>
-        </a>
-      </div>
-      <div class="links">
-        <li><a href="../../../projects.html"><b>PROJECTS</b></a></li>
-        <li><a href="../../../about.html"><b>ABOUT ME</b></a></li>
-      </div>
-    </nav>
 
-    <!-- Content -->
-    <main class="project-documentation">
-      <section class="project-title">
-        <h1>Power Distribution Board</h1>
+<head>
+  <script src="/js/head.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <script src="/js/navbar.js"></script>
+
+  <!-- Content -->
+  <main class="project-documentation">
+    <div class="project-sections">
+      <h1> UBC AeroDesign Power Distribution Board</h1>
+
+      <section id="project-images">
+        <h2>Project Images:</h2>
+        <img src="images/pdb.jpg">
+      </section>
+
+      <section id="learning">
         <h2>Learning:</h2>
         <ul>
-          <li>DC-DC converter design and topologies.</li>
           <li>PCB design using Altium.</li>
           <li>PCB manufacturing and troubleshooting/testing.</li>
+          <li>DC-DC converter design and topologies.</li>
         </ul>
       </section>
 
-      <section class="project-images">
+      <section id="project-overview">
+        <h2>Project Overview</h2>
+        <p>As part of my role on the avionics team at <b>UBC AeroDesign</b>, I designed a power distribution PCB for
+          stepping down power
+          from the main battery to the rest of the components on the plane. I:
+        <ul>
+          <li>used <b>Altium</b> to design a 24V to 12V buck converter.</li>
+          <li>assembled a PCB through a combination of hand and reflow soldering and conducted hardware troubleshooting
+            tests.</li>
+        </ul>
+        </p>
       </section>
 
-      <section class="project-content">
-        <h2>Website page in progress...</h2>
+      <section id="background">
+        <h2>Background</h2>
+        <p>
+          A buck converter is a type of circuit that is able to step down DC voltage through the use of a switch. This
+          essentially works by rapidly switching on and off the switch.
+          If, for a given period of time, the switch is off for an average of 50% of the period, the output will see a
+          50% reduction in voltage. This percentage of time that the switch is off
+          compared to the overall period is called the <b>duty cycle</b>. This method of controlling the output through
+          rapidly turning on and off a switch is called PWM, or <b>pulse-width modulation</b>.
+        </p>
+
+        <p>Practically, an actual switch is not used. Most of the times, it's actually a transistor such as a MOSFET or
+          BJT.</p>
+
+        <p>However, in those times where the switch is open, the voltage at the output will fluctuate. To maintain
+          smooth voltage and current delivery even while the switch is off, an LC filter is implemented at
+          the output. The inductor resists changes in current and emits an EMF to keep current flowing constant while
+          the capacitor will also emit current when it senses a change in voltage (from the switch turning off).
+        </p>
+        <img src="images/buck-diagram.png">
+        <p>To give the current a path back to the negative end of the inductor when the switch is open, we add a Schottky diode in parallel with the load and capacitor.
+        </p>
+
+        <p>
+          Buck converters are often used in power supplies due to their high efficiency, as the voltage is stepped down through a switch instead of dissipating voltage as heat (as seen in linear regulators). Moreover, buck converters can step voltage down from
+          a wide range of input voltages to produce a wide range of output voltages.
+        </p>
       </section>
-    </main>
-  </body>
+
+      <section id="design and manufacturing">
+        <h2>Design and Manufacturing</h2>
+
+        <p>
+          Numerous buck converter ICs are available to purchase online. To pick the best suited choice for our requirements, I 
+        </p>
+
+        <img src="images/buck-altium.png" style="width: 40rem; height:auto">
+
+        <p>
+          For our initial testing, the protection circuits were removed as well as the castellated edges to save on cost.
+        </p>
+
+        <img src="images/manufacture-pdb.jpg" style="width: 20rem; height: auto;">
+      </section>
+    </div>
+  </main>
+</body>
+
 </html>
