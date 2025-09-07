@@ -69,18 +69,41 @@
         <p>
           Above is a rough sketch of how the wiring hub was envisioned to look. The Cube Orange is mounted on the wiring
           hub while the power distribution board is soldered on. The sensor board would be attached on top using pin
-          headers.
-          Moreover, there would be various JST headers for connections to the sensor modules, control surfaces, and
-          other
-          peripherals.
+          headers. Moreover, there would be various JST headers for connections to the sensor modules, control surfaces,
+          and
+          other peripherals.
         </p>
       </section>
 
-      <section id="design">
-        <h2>Design</h2>
-      </section>
+      <section id="design and manufacturing">
+        <h2>Design and Manufacturing</h2>
+        <div style="display: flex; gap: 0rem;">
+          <img src="images/wiring-hub-capture.jpg" style="width: 20rem; height: auto;">
+          <img src="images/wiring-hub-3d.jpg" style="width: 20rem; height: auto;">
+        </div>
 
+        <p>
+          The final wiring hub was designed to be a two-layer board with the necessary pins needed to route
+          communication from the Cube Orange to all the components on the plane. Moreover, auxiliary PWM ports were
+          routed from the Cube Orange in case of the future need for more pins.
+        </p>
+
+        <p>
+          USB functionality was implemented for flashing the Cube Orange. However, I did not consider differential
+          signalling or signal protection for this. In a newer revision, I would definitely revist this concept. As the
+          traces
+          were fairly short, the lack of differential routing did not cause a problem. However, this could definitely
+          cause a problem if more EMI-noisy components were used near the wiring hub.
+        </p>
+
+        <p>
+          The manufacturing and testing was fairly simple. All connectors were hand-soldered. Connectivity and system integration tests were also conducted to ensure that the wiring hub was working as expected.          
+        </p>
+
+
+      </section>
     </div>
   </main>
 </body>
+
 </html>
