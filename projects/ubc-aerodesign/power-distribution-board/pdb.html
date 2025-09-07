@@ -61,11 +61,14 @@
           the capacitor will also emit current when it senses a change in voltage (from the switch turning off).
         </p>
         <img src="images/buck-diagram.png">
-        <p>To give the current a path back to the negative end of the inductor when the switch is open, we add a Schottky diode in parallel with the load and capacitor.
+        <p>To give the current a path back to the negative end of the inductor when the switch is open, we add a
+          Schottky diode in parallel with the load and capacitor.
         </p>
 
         <p>
-          Buck converters are often used in power supplies due to their high efficiency, as the voltage is stepped down through a switch instead of dissipating voltage as heat (as seen in linear regulators). Moreover, buck converters can step voltage down from
+          Buck converters are often used in power supplies due to their high efficiency, as the voltage is stepped down
+          through a switch instead of dissipating voltage as heat (as seen in linear regulators). Moreover, buck
+          converters can step voltage down from
           a wide range of input voltages to produce a wide range of output voltages.
         </p>
       </section>
@@ -74,16 +77,48 @@
         <h2>Design and Manufacturing</h2>
 
         <p>
-          Numerous buck converter ICs are available to purchase online. To pick the best suited choice for our requirements, I 
+          Numerous buck converter ICs are available to purchase online. To pick the best suited choice for our
+          requirements, I utilized a weighted decision matrix to
+          rank various IC choices and determine the best one. All ICs had to be able to step 30V input down to 5V and
+          output 10 A (in line with our power requirements for the plane).
+          However, there were other specifications such as cost, supply, footprint, that will put one choice above the
+          other.
+        </p>
+
+        <p>
+          Using a weighted decision matrix helped me quantitatively rank choices and provide a strong justification to
+          my team as to why I chose a particular IC. I decided on the Texas Instruments LM5146.
+        </p>
+
+        <p>
+          Following the datasheet, I calculated several values essential to designing the buck converter circuit. This
+          would be
+          the duty cycle, the inductor ripple current, peak switching/diode/inductor current, and the minimum inductance
+          required for the inductor component.
         </p>
 
         <img src="images/buck-altium.png" style="width: 40rem; height:auto">
 
         <p>
-          For our initial testing, the protection circuits were removed as well as the castellated edges to save on cost.
+          The final design is shown above. This includes an input current protection circuit, MOSFETs to handle the
+          switching (controlled by the IC through a PWM signal), and castellated edges for soldering the buck converter
+          onto a larger board. Via stitching was used to ensure minimum impedance for return currents. The use of polygon pours as power planes was also extensively used,
+          as this provides better current-carrying capacity and heat dissipation.
+        </p>
+
+        <p>
+          For our initial testing, the protection circuits were removed as well as the castellated edges to save on
+          cost. The components were soldered using a reflow oven.
         </p>
 
         <img src="images/manufacture-pdb.jpg" style="width: 20rem; height: auto;">
+
+        <p>
+          Testing was done through using an oscilloscope to measure the converter's input and output waveforms, and using measured values to calculate overall efficiency.
+          The input voltage was varied while monitoring the output voltage ripple and load regulation.
+        </p>
+
+
       </section>
     </div>
   </main>
