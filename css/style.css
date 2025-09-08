@@ -206,6 +206,15 @@ main.project-documentation {
   margin-top: 0.3rem;
 }
 
+.project-documentation h3::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08); /* very subtle, almost invisible */
+  margin-top: 0.3rem;
+}
+
 .project-documentation ul {
   margin-left: 1.5rem;
   line-height: 1.6;
