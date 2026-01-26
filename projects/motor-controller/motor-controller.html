@@ -46,16 +46,24 @@
         </p>
 
         <h3>The Motor</h3>
+        <img src="images/motor.png">
         <p>
           A disk containing 10 equidistant slits is attached to the motor. As the motor spins, the disk spins with it. Each slot lets light in from an LED to a phototransistor, creating a clock pulse.
           As there are 10 slits, one full turn of the motor produces 10 pulses. We can relate how fast these pulses are recorded to how fast the motor is spinning.
+          <br></br>
+          A flyback diode is connected in parallel to the motor to protect the circuit from voltage spikes caused by the inductive load of the motor.
         </p>
 
         <h3>D Latch and Counter</h3>
+
+        <img src="images/latch.png">
+
         <p>
-          The pulses are sent to two 4-bit counters that are connected to each other. The outputs of the counter are wired to a 7 segment display for visualization.
+          The pulses are then sent to two 4-bit counters that are connected to each other. The outputs of the counter are wired to a 7 segment display for visualization.
           The value of the counter is also sent to an 8-bit D latch for storage. Periodically, a reset pulse is sent to the D latch in order to reset the number of pulses counted. The amount of pulses that are recorded
           between each reset pulse is what we use to determine the RPM of the motor.
+          <br></br>
+          The output of the latch is also connected to a 7-segment display for visualization.
         </p>
 
         <h3>RESET Generator and Latch</h3>
@@ -104,12 +112,36 @@
         </p>
 
         <h3>Protections and Error Signal Amplifier</h3>
-        
-        
 
-      </section>  
+        <img src="images/protections.png">
 
-
+        <p>
+          Next, the output of the DAC goes through an error signal amplifier, a protecting buffer, and finally a power transistor before being sent to the motor.
+          <br></br>
+          The error signal amplifier compares the output voltage of the DAC (the actual speed) with a reference voltage set by a potentiometer (the desired speed).
+          The difference between these two voltages is the error signal, which indicates how far off the motor speed is from the desired speed.
+          <br></br>
+          The measured voltage from the DAC is sent to the inverting input of an operational amplifier, while the reference voltage from the potentiometer is sent to the non-inverting input.
+          The operational amplifier has negative feedback. Therefore, the overall effect is that the operational amplifier will act to minimize the difference between the two inputs.
+          As the measured voltage from the DAC is connected to the inverting input, if the measured voltage is lower than the reference voltage, the output of the operational amplifier will increase. If the measured voltage is higher than the reference voltage, the output of the operational amplifier will decrease.
+          The potentiometer allows the user to set the desired speed by adjusting the reference voltage.
+          <br></br>
+          Our amplified signal is then sent into a protecting buffer, which uses two diodes to restrict the output to be between 5V and 0V. The diodes have a breakdown voltage of 5V.
+          This is important as the power transistor that drives the motor can only handle voltages between 0V and 5V. Any voltage outside this range could damage the transistor.
+          Before the signal is sent to the power transistor, it is also passed through a buffer to ensure that the rest of the circuit is not affected by the load of the motor.
+          <br></br>
+          The BJT power transistor acts as a current amplifier, allowing a small base current to control a much larger current flowing from the collector to the emitter. Particularly, the BJT controls the current from the 15V supply connected to the motor.
+        </p>
+      </section>
+      <section id="results">
+        <h2>Results</h2>
+        <p>
+          Overall, this project was a success. The motor speed could be controlled effectively using the potentiometer.
+          The RPM could be increased or decreased smoothly without any noticeable lag. Moreover, the circuit was stable and did not exhibit oscillations or instability in motor speed.
+          <br></br>
+          This was a great beginner project that introduced me to many fundamental concepts in electronics and circuit design.
+        </p>
+      </section>
     </div>
   </main>
 </body>
