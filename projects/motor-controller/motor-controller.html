@@ -84,14 +84,30 @@
           is then sent to the reset pin of the D latch. We introduce this delay to ensure that the counter will reset only after all values have been stored in the 
           D latch.
           <br></br>
-          The delayed wave is then passed through another RC circuit and inverter. However, this RC circuit has a capacitor value in the picofarads, ensuring a very small time constant and thus very fast charge/discharge times.
-          When passed through an inverter, the effect is an extremely thin square wave akin to a pulse. This will serve as the reset signal to the counter.
+          The delayed wave is then passed through another RC circuit and an inverter. This RC circuit, however, has a capacitor value in the picofarads, ensuring a very small time constant and thus very fast charge/discharge times.
+          When passed through an inverter, the effect is an extremely thin square wave akin to a pulse. This will serve as the reset signal to the counter. A short pulse is desirable as a long pulse would reset the counter multiple times.
+          The signal is then passed through another inverter to ensure that the polarity of the output matches the original signal polarity.
+        </p>
+
+        <h3> Digital-to-Analog Converter</h3>
+
+        <p>
+          The value stored in the D latch has to be converted to an analog signal to control the motor. This was achieved using a R-2R ladder.
+          <br></br>
+          The R-2R ladder is a simple DAC design that uses resistors of only two values (R and 2R) to convert a digital input to an analog voltage.
+          Each bit of the digital input is connected to a node in the R-2R ladder. Depending on whether the bit is high or low, the node will either connect to a reference voltage or ground.
+          The resistors then create a voltage divider network that outputs a voltage proportional to the binary value. The ladder structure ensures that each bit contributes a voltage proportional to its significance in the binary number.
+          At the output, the currents from each branch of the ladder are summed together to produce the final analog voltage. The combined voltage is proportional to the digital input scaled by the reference voltage.
+          <br></br>
+          A buffer amplifier is used at the output of the R-2R ladder to prevent loading effects that could alter the output voltage.
+          This ensures that the output voltage remains stable and accurate regardless of the load connected to it.
         </p>
 
         <h3>Protections and Error Signal Amplifier</h3>
         
+        
 
-      </section>
+      </section>  
 
 
     </div>
