@@ -32,8 +32,9 @@
       <section id="project-overview">
         <h2>Project Overview</h2>
         <p>
-          As the final project in <b>ENPH 259: Experimental Techniques</b>, students were tasked with building a circuit to control the RPM of a motor. Through this project,
-          I learned and developed several skills in electrical circuit design that gave me a solid foundation for further projects in electronics.
+          As the final project in <b>ENPH 259: Experimental Techniques</b>, students were tasked with building a circuit to control the RPM of a motor.
+          The project used extensively a variety of different electrical components such as DACs, ADCs, pulse generators, and latches, among others. 
+          Through this project, I developed several skills in circuit design that gave me a solid foundation for further projects in electronics.
         </p>
       </section>
 
@@ -46,7 +47,7 @@
 
         <h3>The Motor</h3>
         <p>
-          A disk is attached to the motor containing 10 equidistant slits. As the motor spins, the disk spins with it. Each slot lets light in from an LED to a phototransistor, creating a clock pulse.
+          A disk containing 10 equidistant slits is attached to the motor. As the motor spins, the disk spins with it. Each slot lets light in from an LED to a phototransistor, creating a clock pulse.
           As there are 10 slits, one full turn of the motor produces 10 pulses. We can relate how fast these pulses are recorded to how fast the motor is spinning.
         </p>
 
@@ -54,7 +55,7 @@
         <p>
           The pulses are sent to two 4-bit counters that are connected to each other. The outputs of the counter are wired to a 7 segment display for visualization.
           The value of the counter is also sent to an 8-bit D latch for storage. Periodically, a reset pulse is sent to the D latch in order to reset the number of pulses counted. The amount of pulses that are recorded
-          between each reset pulse is what we use to determine the RPM of the motor. Using an R2R ladder, the digital value stored in the D latch is converted to an analog voltage.
+          between each reset pulse is what we use to determine the RPM of the motor.
         </p>
 
         <h3>RESET Generator and Latch</h3>
@@ -62,31 +63,28 @@
         <img src="images/reset.png">
 
         <p>
-          The RESET generator is divided into three main sections: a measuring period generator, delay, and the RESET pulse generator.
-        </p>
+          Three components make up the RESET period generator: a measuring period generator, a delay circuit, and a RESET pulse generator.
 
-        <p>
-          The measuring period generator uses a <b>Schmitt-Trigger inverter</b> and an RC circuit to generate a measuring period.
+          <br></br>
+
+          The measuring period generator uses a <b>Schmitt-Trigger inverter</b> and an RC circuit to generate a period.
           The RC circuit serves as the input to the Schmitt-Trigger inverter, and connects to the output through a feedback loop. The periodic charge and discharge cycle of the RC circuit
           is what generates the measuring period. The inverter "squares" up the output of the RC circuit into a high or low signal.
         </p>
 
         <img src="images/invert.png">
+
         <p>
           We choose to use a Schmitt-Trigger inverter due to its <b>hysteresis property</b>, which means that the voltage at which the inverter switches from
           low to high is different from the voltage needed to switch from high to low. This is incredibly important when trying to convert noisy analog signals to high or low signals.
-          Due to hysteresis, the output will not constantly flip back and forth due to noise. The output will only change when the voltage input crosses a certain threshold. The output is further
+          Due to hysteresis, the output will not constantly flip back and forth between low and high due to noise. The output is further
           fed through another inverter for noise protection before going to the clock input of the D latch.
-        </p>
-
-        <p>
-          We next feed the measuring period output into a delay circuit, whose purpose is to add a short delay using an RC circuit. This signal
-          is then sent to the reset pin of the D latch. We introduce this delay as we want our counter to be able to reset after all values have been stored in the 
+          <br></br>
+          We next feed the measuring period output into a delay circuit, whose purpose is to add another short delay using an RC circuit. This signal
+          is then sent to the reset pin of the D latch. We introduce this delay to ensure that the counter will reset only after all values have been stored in the 
           D latch.
-        </p>
-
-        <p>
-          The delayed wave is then passed through another RC circuit. However, this RC circuit has a capacitor value in the picofarads, ensuring a very small time constant and thus very fast charge/discharge times.
+          <br></br>
+          The delayed wave is then passed through another RC circuit and inverter. However, this RC circuit has a capacitor value in the picofarads, ensuring a very small time constant and thus very fast charge/discharge times.
           When passed through an inverter, the effect is an extremely thin square wave akin to a pulse. This will serve as the reset signal to the counter.
         </p>
 
