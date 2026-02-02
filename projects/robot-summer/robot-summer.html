@@ -107,13 +107,31 @@
         <img src="images/ackermann.png" width="350px">
 
         <p>
-          Using a steering bar mounted to two 3D-printed bosses, 
+          The steering bar was manufactured using laser cutted fiberwood, then mounted to the bottom of the chassis base using two 3D-printed bosses. These bosses are then bolted to the front wheels of the robot.
         </p>
 
         <img src="images/base.png" width="500px">
 
+        <p>
+          For the intake, we went forward with a "car wash" style mechanism. The intake consists of two rotating rubber brushes powered by a motor. As the robot drives forward, blocks are funnelled into the spinning brushes and sucked into the robot's storage area.
+          To assist with block collection, a sheet metal ramp was fabricated and mounted to the front of the robot.
+        </p>
+
         <h3>Electrical Design</h3>
+        <p>
+          Below is the electrical power diagram of our robot.
+        </p>
+
         <h3>Software Design</h3>
+        <p>
+          The robot's software was written in C using the STM32CubeIDE. The main components of the software include:
+          <ul>
+            <li>Motor control using PWM signals.</li>
+            <li>Sensor data processing from line sensors and IR sensor.</li>
+            <li>State machine to manage different robot states (e.g., line following, block collection, jumping).</li>
+            <li>PID control for precise motor speed and steering angle adjustments.</li>
+          </ul>
+        </p>
       </section>
       <section id="conclusion">
         <h2>Conclusion</h2>
