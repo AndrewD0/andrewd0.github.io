@@ -136,18 +136,29 @@
               <li>Line sensors for tape following.</li>
               <li>An IR sensor for beacon detection.</li>
               <li>A DC motor for controlling the block intake mechanism.</li>
+              <li>A servo motor to control the steering bar.</li>
             </ul>
+            All circuits were hand-soldered by the team. There were ideas to use camera vision to sense bombs as well as a "wiper" to push bombs away from the robot, but they were unfortunately never implemented.
         </p>
         
-        <p> There were ideas to use camera vision to sense bombs, as well as a "wiper" to push bombs away from the robot, but they were unfortunately never implemented.</p>
         <h4>Power</h4>
         <p>
           Power is split into two domains: there is one 9V battery for all the sensors and microcontroller, and a 16V battery for all the motors.
           Buck converters and low-dropout regulators are used to step down the voltage from the batteries. 
         </p>
 
+        <img src="images/power.png" width="800px">
+
         <h4>Motor Control</h4>
-        H-bridge
+        <img src="images/motorDrive.png" width="800px">
+        <p>
+          To control the two motors for rear-wheel drive, we used an H-bridge motor driver. The H-bridge allows us to control the direction and speed of the motors using PWM signals from the microcontroller.
+          PWM stands for Pulse Width Modulation; it's a digital signal that rapidly switches between HIGH and low. The fraction of the time that the signal stays HIGH compared to LOW is called the duty cycle, and controls the voltage output of the signal.
+          For example, if a PWM signal had a 50% duty cycle, it would be HIGH for half the time and LOW for the other half, resulting in an effective voltage output of half the original voltage.
+          <br><br>
+          An H-bridge (as shown on the right side of the diagram) consists of four MOSFETs arranged in a bridge configuration. By controlling which MOSFETs are turned on, the direction of the current through the motor can be either forward or reverse, allowing for bidirectional motor control.
+          Additionally, by applying a PWM signal 
+        </p>
 
         <h4>Line Following</h4>
 
