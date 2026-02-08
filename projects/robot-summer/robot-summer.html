@@ -138,16 +138,11 @@
               <li>A DC motor for controlling the block intake mechanism.</li>
               <li>A servo motor to control the steering bar.</li>
             </ul>
+            Power is split into two domains: there is one 9V battery for all the sensors and microcontroller, and a 16V battery for all the motors.
+            Buck converters and low-dropout regulators are used to step down the voltage from the batteries. 
+            <br><br>
             All circuits were hand-soldered by the team. There were ideas to use camera vision to sense bombs as well as a "wiper" to push bombs away from the robot, but they were unfortunately never implemented.
         </p>
-        
-        <h4>Power</h4>
-        <p>
-          Power is split into two domains: there is one 9V battery for all the sensors and microcontroller, and a 16V battery for all the motors.
-          Buck converters and low-dropout regulators are used to step down the voltage from the batteries. 
-        </p>
-
-        <img src="images/power.png" width="800px">
 
         <h4>Motor Control</h4>
         <img src="images/motorDrive.png" width="800px">
@@ -172,6 +167,7 @@
           We can use this sensor data to determine how aligned the robot is with the tape and code a line-following algorithm.
         </p>
 
+        <img src="images/reflectanceSense.png" width="500px">
 
         <h4>Infrared Detection</h4>
 
