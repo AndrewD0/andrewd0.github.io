@@ -37,6 +37,7 @@
           This project involved a wide range of skills, including electrical circuit design, embedded software development, and rapid mechanical design, protyping and fabrication.
           Moreover, as we were only given six weeks to build the entire robot from scratch, I also learned a lot about project management and team coordination.
         </p>
+
       </section>
       <section id="introduction">
         <h2>Competition Introduction</h2>
@@ -118,7 +119,7 @@
 
         <p>
           For the intake, we went forward with a "car wash" style mechanism. The intake consists of two rotating rubber brushes powered by a motor. As the robot drives forward, blocks are funnelled into the spinning brushes and sucked into the robot's storage area.
-          To assist with block collection, a sheet metal ramp was fabricated and mounted to the front of the robot.
+          To assist with block collection, a sheet metal ramp was fabricated with a waterjet and mounted to the front of the robot.
         </p>
 
         <h3>Electrical Design</h3>
@@ -185,16 +186,30 @@
             <li>Motor control using PWM signals.</li>
             <li>Sensor data processing from line sensors and IR sensor.</li>
             <li>State machine to manage different robot states (e.g., line following, IR following, jumping).</li>
-            <li>PID control for precise motor speed and steering angle adjustments.</li>
+            <li>PID control for line-following.</li>
           </ul>
 
-          <h3>Motor Control</h3>
-          <h3>Line and Infrared Following</h3>
-          <h3>State Machine</h3>
+          The full code can be viewed at the following <b><a href="https://github.com/AndrewD0/Monkii-Code" target="_blank">Github repository</a></b>.
+        </p>
+
+        PID control was implemented for line and IR following. PID stands for Proportional-Integral-Derivative; it's a control algorithm that calculates an error value as the difference between a desired setpoint and a measured point, then applies a correction based on proportional, integral, and derivative terms.
+          <ul>
+            <li>The proportional term produces an output value that is scaled by a constant to the current error value. It provides a correction that is directly related to the magnitude of the error.</li>
+            <li>The integral term produces an output value that is proportional to the integral of the error over time. It helps eliminate any residual steady-state error.</li>
+            <li>The derivative term produces an output value that is proportional to the rate of change of the error. It provides a correction based on how quickly the error is changing, which can help improve stability and reduce overshoot.</li>
+          </ul>
+        Extensive testing was done to adjust the PID values to ensure that the robot could follow the tape and IR.
         </p>
       </section>
       <section id="conclusion">
+
         <h2>Conclusion</h2>
+        <p>
+          Overall, this project was the most intensive and rewarding project I've done in my engineering career to date. I had an opportunity to combine a wide range of skills I've learned in my courses and apply them to a large, complex project.
+          Moreover, I also learned new skills such as PID control, electrical circuit design (h-bridges, buck converters, optocouplers), and fabrication techniques (laser cutting, 3D printing, sheet metal fabrication).
+          <br><br>
+          I am incredibly grateful to have had the opportunity to work on this project with my team, and I am proud of what we were able to accomplish in such a short amount of time.
+        </p>
       </section>
     </div>
   </main>
