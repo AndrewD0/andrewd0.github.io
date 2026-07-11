@@ -55,10 +55,6 @@ a {
 }
 
 /* Index blurb styling. */
-body.index-page{
-  background-color: transparent;
-}
-
 .blurb-index{
   scroll-snap-align: start;
   position: absolute;
