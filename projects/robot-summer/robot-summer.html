@@ -2,22 +2,27 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Racing Robot | Andrew's Desk</title>
+  <meta name="description" content="An autonomous line-following and IR-guided racing robot built in six weeks for the ENPH 253 Robot Summer competition.">
+  <meta property="og:title" content="Autonomous Racing Robot | Andrew's Desk">
+  <meta property="og:description" content="An autonomous line-following and IR-guided racing robot built in six weeks for the ENPH 253 Robot Summer competition.">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="/assets/favicon/superintendent.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/assets/katex/katex.min.css">
+  <script src="/assets/katex/katex.min.js"></script>
+  <script src="/assets/katex/contrib/auto-render.min.js"></script>
   <script src="/js/head.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <script src="/js/navbar.js"></script>
-
   <!-- Content -->
   <main class="project-documentation">
     <div class="project-sections">
+      <a href="/projects.html" class="back-link">&larr; Back to Projects</a>
       <h1>Autonomous Racing Robot</h1>
-
-      <section id="project-images">
-        <h2>Project Images</h2>
-        <img src="images/robot-gif.gif">
-      </section>
 
       <section id="learning">
         <h2>Learning</h2>
@@ -51,7 +56,6 @@
         </p>
 
         <h3>Competition Rules</h3>
-        <img src="images/competitionSurface.png">
         <p>
           Above is an overview of the competition surface.
           <br><br>
@@ -75,8 +79,6 @@
           To reduce our lap time even further, we also decided to design our robot to be able to jump off "Rainbow Road." The yellow route below highlights our robot's proposed path.
         </p>
 
-        <img src="images/modifiedTrack.png">
-
         <p>
           With this in mind, our robot had to have the following capabilities:
           <ul>
@@ -87,8 +89,6 @@
           </ul>
         </p>
 
-        <img src="images/carTop.png">
-
         <p>
           Above is a top down representation of our robot's design. The robot will be a four-wheeled car with rear-wheel drive powered by two DC motors. Moreover, as the robot will be driving over rough terrain, the wheels
           will be fitted with large rubber tires for better traction and cushioning. The battery will also be placed near the rear of the robot. Circuitry will be placed in the center of the robot.
@@ -96,11 +96,9 @@
           To pick up blocks, the robot will be designed to have a "car wash intake" mechanism controlled by a motor. This mechanism will be able to collect blocks and place them in the robot's storage area. 
         </p>
 
-        <img src="images/3DRough.png" width="500px">
         <p>
           To better cushion our robot when jumping off "Rainbow Road," we also brainstormed the possibility of adding a suspension system to our robot.
         </p>
-        <img src="images/drawingSketch.png" width="500px">
 
         <h3>Mechanical Design</h3>
         <p>
@@ -109,13 +107,9 @@
           One important feature of the robot was the Ackermann steering geometry. This design allows the inner wheel to turn at a sharper angle than the outer wheel, allowing for better handling and a reduced turning radius.
         </p>
 
-        <img src="images/ackermann.png" width="350px">
-
         <p>
           The steering bar was manufactured using laser cutted fiberwood, then mounted to the bottom of the chassis base using two 3D-printed bosses. These bosses are then bolted to the front wheels of the robot.
         </p>
-
-        <img src="images/base.png" width="500px">
 
         <p>
           For the intake, we went forward with a "car wash" style mechanism. The intake consists of two rotating rubber brushes powered by a motor. As the robot drives forward, blocks are funnelled into the spinning brushes and sucked into the robot's storage area.
@@ -127,8 +121,6 @@
         <p>
           Below is the electrical system diagram of our robot.
         </p>
-
-        <img src="images/systemDiagram.png" width="900px">
 
         <p>
             The main components of the system include:
@@ -147,7 +139,6 @@
         </p>
 
         <h4>Motor Control</h4>
-        <img src="images/motorDrive.png" width="800px">
         <p>
           For driving the two motors for rear-wheel drive, we used an H-bridge motor driver. The H-bridge allows us to control the direction and speed of the motors using PWM signals from the microcontroller.
           PWM stands for Pulse Width Modulation; it's a digital signal that rapidly switches between HIGH and low. The fraction of the time that the signal stays HIGH compared to LOW is called the duty cycle, and controls the voltage output of the signal.
@@ -169,15 +160,11 @@
           We can use this sensor data to determine how aligned the robot is with the tape and code a line-following algorithm.
         </p>
 
-        <img src="images/reflectanceSense.png" width="500px">
-
         <h4>Infrared Detection</h4>
         <p>
           For infrared detection, two infrared phototransistors were used. These sensors output a voltage based on the amount of infrared light they receive. The phototransistors were mounted on the front of the robot, where they would receive the most infrared light when the robot is facing the beacon.
           An amplification circuit was also added to allow detection of the infrared beacon from a further distance.
         </p>
-
-        <img src="images/infraredBeacon.png" width="500px">
 
         <h3>Software Design</h3>
         <p>

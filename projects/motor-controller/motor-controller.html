@@ -2,22 +2,27 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Closed-Loop Motor Speed Controller | Andrew's Desk</title>
+  <meta name="description" content="A closed-loop motor speed controller built from DACs, ADCs, latches, and analog circuits for ENPH 259.">
+  <meta property="og:title" content="Closed-Loop Motor Speed Controller | Andrew's Desk">
+  <meta property="og:description" content="A closed-loop motor speed controller built from DACs, ADCs, latches, and analog circuits for ENPH 259.">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="/assets/favicon/superintendent.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/assets/katex/katex.min.css">
+  <script src="/assets/katex/katex.min.js"></script>
+  <script src="/assets/katex/contrib/auto-render.min.js"></script>
   <script src="/js/head.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <script src="/js/navbar.js"></script>
-
   <!-- Content -->
   <main class="project-documentation">
     <div class="project-sections">
+      <a href="/projects.html" class="back-link">&larr; Back to Projects</a>
       <h1> Closed-Loop Motor Speed Controller</h1>
-
-      <section id="project-images">
-        <h2>Project Images</h2>
-        <img src="images/motor-circuit.jpg">
-      </section>
 
       <section id="learning">
         <h2>Learning</h2>
@@ -40,13 +45,11 @@
 
       <section id="circuit-walkthrough">
         <h2>Circuit Walkthrough</h2>
-        <img src="images/circuit-diagram.png">
         <p>
           Above is the final circuit diagram. The motor is located on the top left of the diagram. We can split the circuit into five parts.
         </p>
 
         <h3>The Motor</h3>
-        <img src="images/motor.png">
         <p>
           A disk containing 10 equidistant slits is attached to the motor. As the motor spins, the disk spins with it. Each slot lets light in from an LED to a phototransistor, creating a clock pulse.
           As there are 10 slits, one full turn of the motor produces 10 pulses. We can relate how fast these pulses are recorded to how fast the motor is spinning.
@@ -55,8 +58,6 @@
         </p>
 
         <h3>D Latch and Counter</h3>
-
-        <img src="images/latch.png">
 
         <p>
           The pulses are then sent to two 4-bit counters that are connected to each other. The outputs of the counter are wired to a 7 segment display for visualization.
@@ -68,8 +69,6 @@
 
         <h3>RESET Generator and Latch</h3>
 
-        <img src="images/reset.png">
-
         <p>
           Three components make up the RESET period generator: a measuring period generator, a delay circuit, and a RESET pulse generator.
 
@@ -79,8 +78,6 @@
           The RC circuit serves as the input to the Schmitt-Trigger inverter, and connects to the output through a feedback loop. The periodic charge and discharge cycle of the RC circuit
           is what generates the measuring period. The inverter "squares" up the output of the RC circuit into a high or low signal.
         </p>
-
-        <img src="images/invert.png">
 
         <p>
           We choose to use a Schmitt-Trigger inverter due to its <b>hysteresis property</b>, which means that the voltage at which the inverter switches from
@@ -112,8 +109,6 @@
         </p>
 
         <h3>Protections and Error Signal Amplifier</h3>
-
-        <img src="images/protections.png">
 
         <p>
           Next, the output of the DAC goes through an error signal amplifier, a protecting buffer, and finally a power transistor before being sent to the motor.

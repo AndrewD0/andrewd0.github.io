@@ -2,22 +2,27 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiring Hub PCB | Andrew's Desk</title>
+  <meta name="description" content="A centralized wiring hub PCB designed in Altium to distribute power and signals across a UBC AeroDesign aircraft.">
+  <meta property="og:title" content="Wiring Hub PCB | Andrew's Desk">
+  <meta property="og:description" content="A centralized wiring hub PCB designed in Altium to distribute power and signals across a UBC AeroDesign aircraft.">
+  <meta property="og:type" content="article">
+  <link rel="icon" href="/assets/favicon/superintendent.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/assets/katex/katex.min.css">
+  <script src="/assets/katex/katex.min.js"></script>
+  <script src="/assets/katex/contrib/auto-render.min.js"></script>
   <script src="/js/head.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <script src="/js/navbar.js"></script>
-
   <!-- Content -->
   <main class="project-documentation">
     <div class="project-sections">
+      <a href="/projects.html" class="back-link">&larr; Back to Projects</a>
       <h1> UBC AeroDesign Wiring Hub</h1>
-
-      <section id="project-images">
-        <h2>Project Images</h2>
-        <img src="images/wiring-hub.jpg" style="width: 400px; height: auto;">
-      </section>
 
       <section id="learning">
         <h2>Learning</h2>
@@ -52,16 +57,12 @@
           Below is an image of the electrical wiring on the plane before the wiring hub. Very messy!
         </p>
 
-        <img src="images/wiring-hub-before.png">
-
         <p>
           The wiring hub acts as the "motherboard" of the plane. Power and communication to every component on the plane
           is distributed from this PCB. Moreover, the wiring hub acts as a centralized housing surface
           for other electrical components. These include the <b>Cube Orange</b> flight controller, a buck converter power
           distribution board, and a sensor board for communication and sensor functionality.
         </p>
-
-        <img src="images/sketch-hub.jpg">
 
         <p>
           Above is a rough sketch of how the wiring hub was envisioned to look. The Cube Orange is mounted on the wiring
@@ -73,11 +74,6 @@
 
       <section id="design and manufacturing">
         <h2>Design and Manufacturing</h2>
-        <div style="display: flex; gap: 0rem;">
-          <img src="images/wiring-hub-capture.jpg" style="width: 20rem; height: auto;">
-          <img src="images/wiring-hub-3d.jpg" style="width: 20rem; height: auto;">
-        </div>
-
         <p>
           The final wiring hub was designed to be a two-layer board with the necessary pins needed to route
           communication signals from the Cube Orange to all the components on the plane. Moreover, auxiliary PWM ports were
