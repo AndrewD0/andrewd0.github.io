@@ -58,14 +58,11 @@ a {
 /* Index blurb styling. */
 .blurb-index{
   scroll-snap-align: start;
-  position: absolute;
   width: 50vw;
   max-width: 42rem;
-  top: 100vh; /* Position it after the graph. */
-  left: 50%;
-  transform: translate(-50%, 0%);
+  margin-top: 100vh; /* Position it after the graph. */
   padding: 2rem;
-  font-size: large
+  font-size: clamp(1.125rem, 1vw + 0.75rem, 1.5rem);
 }
 
 #blurb-index {
@@ -362,7 +359,7 @@ main.project-documentation {
 /* Footer styling. */
 .footer {
   padding: 1rem 0.5rem 1rem;
-  margin-top: 70vh;
+  margin-top: 4rem;
   text-align: center;
 }
 
@@ -389,7 +386,7 @@ main.project-documentation {
 }
 
 /* 3D graph styling. */
-#3d-graph{
+[id="3d-graph"]{
   width: 100vw;
   height: 120vh;
   position: absolute;
