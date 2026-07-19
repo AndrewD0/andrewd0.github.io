@@ -62,7 +62,7 @@ a {
   max-width: 42rem;
   margin-top: 100vh; /* Position it after the graph. */
   padding: 2rem;
-  font-size: clamp(1.125rem, 1vw + 0.75rem, 1.5rem);
+  font-size: clamp(1.125rem, 0.9375vw, 1.5rem);
 }
 
 #blurb-index {
