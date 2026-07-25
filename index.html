@@ -51,6 +51,11 @@
       .showNavInfo(false)  // Hide navigation instructions
       .backgroundColor('#0d0d0d');
 
+    // Keep the graph's canvas in sync with the window as it's resized.
+    window.addEventListener('resize', () => {
+      Graph.width(window.innerWidth).height(window.innerHeight);
+    });
+
     // Camera orbit
     let angle = 0;
 
