@@ -45,28 +45,26 @@
           A buck converter is a type of electronic power circuit that is able to convert a higher input voltage into a lower output voltage; it is one of the most popular topologies in power electronics. 
           The circuit is fairly simple: the main components are a switch, an inductor, and an output capacitor.
           <br><br>
-          The switch is responsible for decreasing the input voltage by rapidly turning on and off.
-          If, for a given period of time, the switch is off for an average of 50% of the period, the output will see a
-          50% reduction in voltage. This percentage of time that the switch is off
-          compared to the overall period is called the <b>duty cycle</b>. This method of controlling the output through
-          rapidly turning on and off a switch is called PWM, or <b>pulse-width modulation</b>. Practically, an actual switch is not used. Most of the times, it's actually a transistor such as a MOSFET or
-          BJT.
+          Above is a diagram of a buck converter circuit in action. Note that the switch breaks or connects the entire circuit.
           <br><br>
-          However, in those times where the switch is open, the voltage at the output will go to 0. As a consequence, as the switch is turned on and off, the output voltage will also fluctuate. To maintain
-          a constant voltage and current delivery, an LC filter is implemented at
-          the output. The inductor resists changes in current and emits an EMF to keep current flowing constant while
+          A buck converter is able to turn a higher voltage input into a lower voltage output through the use of a switch.
+          The switch does this by being rapidly turned on and off. If, for a given period of time, the switch is off for 50% of said period, the output voltage will as a consequence be
+          50% of the input voltage. This percentage of time that the switch is off compared to the period is called the <b>duty cycle</b>, and the method of controlling the output through
+          rapidly turning on and off a switch is called PWM, or <b>pulse-width modulation</b>. 
+          <br><br>
+          Practically, an actual switch is not used. Instead, a transistor such as a MOSFET or a BJT serve as the switch.
+          <br><br>
+          In the times where the switch is open, we notice that the voltage at the output will go to 0. As a consequence, as the switch is turned on and off, the output voltage will also fluctuate rapidly. To maintain
+          a constant voltage and current delivery, an <b>LC filter</b> is implemented at the output. The inductor resists changes in current and emits an EMF to keep current flowing constant while
           the capacitor will also emit current when it senses a change in voltage.
-        </p>
-
-        <p>
-          To give the current a path back to the negative end of the inductor when the switch is open, we add a
-          Schottky diode in parallel with the load and capacitor.
           <br><br>
-          Buck converters are often used in power supplies due to their high efficiency, as the voltage is stepped down
-          through a switch instead of dissipating voltage as heat. Moreover, buck converters can step voltage down from
-          a wide range of input voltages to then produce a wide range of output voltages.
+          It's also noticed that with this implementation there is nowhere for the current from the inductor to go when the switch is open. To give the current a path back to the negative end of the inductor, a
+          Schottky diode is added in parallel with the capacitor.
+          <br><br>
+          Buck converters are often used in power electronics due to their high efficiency as the voltage is stepped down
+          through the use of PWM instead of simply dissipating voltage as heat. Moreover, buck converters can step voltage down to a wide range of output voltages from
+          a wide range of input voltages.
         </p>
-
       </section>
 
       <section id="design and manufacturing">
