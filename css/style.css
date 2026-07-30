@@ -167,7 +167,7 @@ main.project-documentation {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  width: 12rem;
+  width: 11rem;
   z-index: 5;
 }
 
@@ -203,7 +203,7 @@ main.project-documentation {
   padding-bottom: 0;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1247px) {
   .toc {
     display: none;
   }
