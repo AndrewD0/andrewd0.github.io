@@ -29,7 +29,7 @@
         <ul>
           <li>Electrical circuit design: h-bridges, buck converters, sensors, among others.</li>
           <li>Electrical noise protection and signal integrity..</li>
-          <li>Writing software (motor control, sensor data processing, state machines) on a STM32 Blue Pill.</li>
+          <li>Writing C software (motor control, sensor data processing, state machines) on a STM32 Blue Pill.</li>
           <li>PID control.</li>
           <li>CAD modelling (SOLIDWORKS, OnShape) and rapid prototyping, manufacturing.</li>
         </ul>
@@ -50,12 +50,15 @@
         <p>
           <b>ENPH 253: Introduction to Instrument Design</b> is a second-year engineering physics project course that exposes
           students to a wide range of hands-on engineering skills. In teams of four, students have to design, build, and test an autonomous robot to compete in a themed racing competition.
-          In my year, the theme was Mario Kart! The robots had to autonomously race through a track with various obstacles, as well as collect coins and blocks on the way for extra points.
+          In my year, the theme was Mario Kart! The robots had to autonomously race through a track with various obstacles as well as collect coins and blocks on the way for extra points.
           <br><br>
           Students are only given six weeks to complete the entire project.
         </p>
 
         <h3>Competition Rules</h3>
+        <figure>
+          <img src="images/competitionSurface.png" alt="Mario Kart themed competition surface with track, coins, and obstacles">
+        </figure>
         <p>
           Above is an overview of the competition surface.
           <br><br>
@@ -63,7 +66,7 @@
           Three points are gained for every lap a robot completes. There are multiple ways to complete a lap. The easiest way is to design your robot to follow a black taped line (on the map highlighted in blue).
           There is also an IR beacon at the end of the surface that robots can hone onto for navigation.
           <br><br>
-          One point is gained for every coin or blocked picked up (the gold circles and white squares on the map). In contrast, picking up a magnetic bomb (highlighted in red) forces the robot return to the start of the track and lose all its coins.
+          One point is gained for every coin or blocked picked up (the gold circles and white squares on the map). Picking up a magnetic bomb (highlighted in red) forces the robot return to the start of the track and lose all its collected coins.
           <br><br>
           Shortcuts exist on the track. For example, a robot can opt to take the zipline (highlighted in black), or even jump off "Rainbow Road."
         </p>
@@ -72,12 +75,21 @@
         <h2>Design</h2>
 
         <h3>Brainstorming and Strategy</h3>
+
+        <figure>
+          <img src="images/drawingSketch.png" alt="Initial sketches and brainstorming drawings of robot design">
+        </figure>
+
         <p>
-          Our team brainstormed various strategies and designs to maximize our points in the competition. We decided to design a robot that would be able to 
+          Our team brainstormed various strategies and designs to maximize our points in the competition. We decided to design a robot that would be able to
           collect blocks while following both the taped line as well as hone onto the IR beacon. Using the IR beacon would allow us to take a short cut: we would be able to cut straight across first section of the racetrack instead of the winding taped line.
           <br><br>
           To reduce our lap time even further, we also decided to design our robot to be able to jump off "Rainbow Road." The yellow route below highlights our robot's proposed path.
         </p>
+
+        <figure>
+          <img src="images/modifiedTrack.png" alt="Competition track with yellow path highlighting the robot's planned route">
+        </figure>
 
         <p>
           With this in mind, our robot had to have the following capabilities:
@@ -89,38 +101,58 @@
           </ul>
         </p>
 
-        <p>
-          Above is a top down representation of our robot's design. The robot will be a four-wheeled car with rear-wheel drive powered by two DC motors. Moreover, as the robot will be driving over rough terrain, the wheels
-          will be fitted with large rubber tires for better traction and cushioning. The battery will also be placed near the rear of the robot. Circuitry will be placed in the center of the robot.
-          <br><br>
-          To pick up blocks, the robot will be designed to have a "car wash intake" mechanism controlled by a motor. This mechanism will be able to collect blocks and place them in the robot's storage area. 
-        </p>
+        <figure>
+          <img src="images/carTop.png" alt="Top-down view of robot design showing wheel and component layout">
+        </figure>
 
         <p>
+          Above is a top down representation of our robot's design. The robot will be a four-wheeled car with rear-wheel drive powered by two DC motors. As the robot will be driving over rough terrain, the wheels
+          will be fitted with large rubber tires for better traction and cushioning. Circuitry will be placed in the center of the robot while the battery will be placed in the rear.
+          <br><br>
+          To pick up blocks, the robot will be designed to have a "car wash intake" mechanism controlled by a motor. This will allow the robot to collect blocks and place them in the robot's storage area while driving. 
+          <br><br>
           To better cushion our robot when jumping off "Rainbow Road," we also brainstormed the possibility of adding a suspension system to our robot.
         </p>
 
         <h3>Mechanical Design</h3>
+
+        <figure>
+          <img src="images/3DRough.png" alt="3D CAD model of robot chassis in OnShape">
+        </figure>
+
         <p>
-          The robot was first designed on OnShape, a cloud-based CAD software. The chassis was designed to be laser printed in multiple parts using fiberwood, which were then assembled using bolts.
+          The robot was first designed on OnShape, a cloud-based CAD software. The chassis was designed to be laser printed in multiple parts using fiberwood and attached together using metal bolts.
           <br><br>
           One important feature of the robot was the Ackermann steering geometry. This design allows the inner wheel to turn at a sharper angle than the outer wheel, allowing for better handling and a reduced turning radius.
         </p>
 
-        <p>
-          The steering bar was manufactured using laser cutted fiberwood, then mounted to the bottom of the chassis base using two 3D-printed bosses. These bosses are then bolted to the front wheels of the robot.
-        </p>
+        <figure>
+          <img src="images/ackermann.png" alt="Ackermann steering geometry diagram showing differential wheel angles">
+        </figure>
 
         <p>
-          For the intake, we went forward with a "car wash" style mechanism. The intake consists of two rotating rubber brushes powered by a motor. As the robot drives forward, blocks are funnelled into the spinning brushes and sucked into the robot's storage area.
+          The steering bar was manufactured using laser-cutted fiberwood then mounted to the bottom of the chassis base using two 3D-printed bosses. These bosses are then bolted to the front wheels of the robot.
+        </p>
+
+        <figure>
+          <img src="images/base.png" alt="Chassis base assembly with mounting points and drive system">
+        </figure>
+
+        <p>
+          The intake consists of two rotating rubber brushes powered by a motor. As the robot drives forward, blocks are funnelled into the spinning brushes and sucked into the robot's storage area.
           To assist with block collection, a sheet metal ramp was fabricated with a waterjet and mounted to the front of the robot.
         </p>
 
         <h3>Electrical Design</h3>
         <h4>System Overview</h4>
+
         <p>
           Below is the electrical system diagram of our robot.
         </p>
+
+        <figure>
+          <img src="images/systemDiagram.png" alt="Electrical system diagram showing microcontroller, motors, sensors, and power distribution">
+        </figure>
 
         <p>
             The main components of the system include:
@@ -135,34 +167,42 @@
             Power is split into two domains: there is one 9V battery for all the sensors and microcontroller, and a 16V battery for all the motors.
             Buck converters and low-dropout regulators are used to step down the voltage from the batteries. 
             <br><br>
-            All circuits were hand-soldered by the team. There were ideas to use camera vision to sense bombs as well as a "wiper" to push bombs away from the robot, but they were unfortunately never implemented.
+            All circuits were hand-soldered by the team.
         </p>
 
         <h4>Motor Control</h4>
         <p>
-          For driving the two motors for rear-wheel drive, we used an H-bridge motor driver. The H-bridge allows us to control the direction and speed of the motors using PWM signals from the microcontroller.
-          PWM stands for Pulse Width Modulation; it's a digital signal that rapidly switches between HIGH and low. The fraction of the time that the signal stays HIGH compared to LOW is called the duty cycle, and controls the voltage output of the signal.
+          For controlling the two drive motors, we used an H-bridge motor driver. The H-bridge allows us to control the direction and speed of the motors using PWM signals from the microcontroller.
+          PWM stands for Pulse Width Modulation: it's a digital signal that rapidly switches between HIGH and LOW. The fraction of the time that the signal stays HIGH compared to LOW is called the duty cycle, and controls the voltage output of the signal.
           For example, if a PWM signal had a 50% duty cycle, it would be HIGH for half the time and LOW for the other half, resulting in an effective voltage output of half the original voltage.
           <br><br>
           An H-bridge (as shown on the right side of the diagram) consists of four MOSFETs arranged in a bridge configuration. By controlling which MOSFETs are turned on, the direction of the current through the motor can be either forward or reverse, allowing for bidirectional motor control.
-          With our design, however, N-type MOSFETs were used instead of P-type on the high side. This means that to turn on the MOSFET, the gate of the N-MOSFETs need to be driven higher than the voltage of the motor, 12V. The Blue Pill is unable to output a voltage at this level, which is why we used a gate driver instead.
+          With our design, however, N-type MOSFETs were used instead of P-type MOSFETs on the high side. This means that to turn on the MOSFET, the gate of the N-MOSFETs need to be driven higher than the voltage of the motor, 12V. The Blue Pill is unable to output a voltage at this level, which is why we used a gate driver instead.
           <br><br>
           The gate driver is a specialized integrated circuit that takes the low-voltage control signals from the microcontroller and translates them into the higher voltage signals needed to drive the MOSFETs in the H-bridge. Specifically, it outputs voltages at the supply voltage (12V) plus another 12V, meaning that the gate driver will be
           able to drive the high-side N-MOSFETs at 24V.
           <br><br>
           To isolate the microcontroller from the noisy signals generated by the motors, optocouplers were used to transmit the PWM signals from the Blue Pill to the gate driver.
         </p>
-
+        <figure>
+          <img src="images/motorDrive.png" alt="H-bridge motor driver circuit schematic with gate driver and optocoupler isolation">
+        </figure>
         <h4>Line Following</h4>
+        <figure>
+          <img src="images/reflectanceSense.png" alt="Reflectance sensor circuit for detecting black tape on white surface">
+        </figure>
         <p>
-          Line following was achieved through 3 analog reflectance sensors, that output a varying voltage based on the amount of reflected light they receive.
+          Line following was achieved through 3 analog reflectance sensors that output a varying voltage based on the amount of reflected light they receive.
           The sensors were mounted at the front of the robot and pointed down towards the racetrack. When the sensors are over the black tape, they will receive less reflected light and output a lower voltage. Conversely, when the sensors are over the white surface, they will receive more reflected light and output a higher voltage.
-          We can use this sensor data to determine how aligned the robot is with the tape and code a line-following algorithm.
+          This sensor data is used to determine how aligned the robot is with the tape.
         </p>
 
         <h4>Infrared Detection</h4>
+        <figure>
+          <img src="images/infraredBeacon.png" alt="Infrared phototransistor circuit with amplification for beacon detection">
+        </figure>
         <p>
-          For infrared detection, two infrared phototransistors were used. These sensors output a voltage based on the amount of infrared light they receive. The phototransistors were mounted on the front of the robot, where they would receive the most infrared light when the robot is facing the beacon.
+          For infrared detection, two infrared phototransistors were used. These sensors output a voltage based on the amount of infrared light they receive. The phototransistors were mounted on the front of the robot where they would receive the most infrared light when the robot is facing the beacon.
           An amplification circuit was also added to allow detection of the infrared beacon from a further distance.
         </p>
 
@@ -175,16 +215,18 @@
             <li>State machine to manage different robot states (e.g., line following, IR following, jumping).</li>
             <li>PID control for line-following.</li>
           </ul>
-
-          The full code can be viewed at the following <b><a href="https://github.com/AndrewD0/Monkii-Code" target="_blank">Github repository</a></b>.
-        </p>
-
-        PID control was implemented for line and IR following. PID stands for Proportional-Integral-Derivative; it's a control algorithm that calculates an error value as the difference between a desired setpoint and a measured point, then applies a correction based on proportional, integral, and derivative terms.
+          The full code can be viewed at the following <b><a href="https://github.com/AndrewD0/Monkii-Code" target="_blank">GitHub repository</a></b>.
+          <br><br>
+          PID control was implemented for line and IR following. PID stands for Proportional-Integral-Derivative: it's a control algorithm that calculates an error value as the difference between a desired setpoint and a measured point, then applies a correction based on proportional, integral, and derivative terms.
           <ul>
             <li>The proportional term produces an output value that is scaled by a constant to the current error value. It provides a correction that is directly related to the magnitude of the error.</li>
             <li>The integral term produces an output value that is proportional to the integral of the error over time. It helps eliminate any residual steady-state error.</li>
             <li>The derivative term produces an output value that is proportional to the rate of change of the error. It provides a correction based on how quickly the error is changing, which can help improve stability and reduce overshoot.</li>
           </ul>
+          The PID output is calculated as:
+          $$u(t) = K_p e(t) + K_i \int_0^t e(\tau) d\tau + K_d \frac{de}{dt}$$
+          where \(e(t)\) is the error and \(K_p\), \(K_i\), \(K_d\) are the tuning constants.
+          <br><br>
         Extensive testing was done to adjust the PID values to ensure that the robot could follow the tape and IR.
         </p>
       </section>
