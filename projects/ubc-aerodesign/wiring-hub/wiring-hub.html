@@ -36,60 +36,62 @@
       <section id="project-overview">
         <h2>Project Overview</h2>
         <p>
-          As part of my role on the avionics team at <b>UBC AeroDesign</b>, I designed a wiring hub PCB for
-          centralizing the power distribution, sensor modules, and other peripheral components of the plane. Through
-          this project, I:
-        <ul>
-          <li>used <b>Altium</b> to design a comprehensive two-layered PCB able to interact with external hardware
-            elements: outlined schematic, component selection.</li>
-          <li>assembled a PCB through hand-soldering and conducted hardware troubleshooting tests.</li>
-        </ul>
+          As part of my role on the avionics team at <b><a href="https://www.ubcaerodesign.com/" target="_blank">UBC AeroDesign</a></b>, I designed a two-layer wiring hub PCB that acts as the central "motherboard" of the plane.
+          The board is responsible for distributing power and communication to the 10+ sensors, control surfaces, and other powered peripheral components. The board also serves as the mounting surface for the Cube Orange
+          flight controller, a buck converter power distribution board, and a sensor and communications PCB.
         </p>
       </section>
 
       <section id="background">
         <h2>Background</h2>
         <p>
-          The planes that UBC AeroDesign builds utilizes 10+ different sensors, control surface connections, and other
-          peripheral components. In the past, power and communication was diverted to these components individually, leading to an extremely cluttered electrical wiring setup. The
-          wiring hub PCB I designed aims to fix this issue.
-          <br><br>
-          Below is an image of the electrical wiring on the plane before the wiring hub. Very messy!
+          The planes that UBC AeroDesign builds include 10+ sensors, control surface connections, and other powered peripheral components. Power and communication used to be routed to each of these individually, which left the aircraft with
+          a cluttered wiring harness.
         </p>
+          
+        <figure>
+          <img src="images/wiring-hub-before.png" alt="Wiring hub before">
+        </figure>
 
         <p>
+          The wiring hub solves this issue by acting as the "motherboard" of the plane. Power and communication to every component on the plane will be routed from this single board.
+          Moreover, the wiring hub also serves as the centralized mounting surface for the rest of the avionics system. This includes the Cube Orange flight controller, a power distribution board, and a sensor and communications board.
           The wiring hub acts as the "motherboard" of the plane. Power and communication to every component on the plane
           is distributed from this PCB. Moreover, the wiring hub acts as a centralized housing surface
           for other electrical components. These include the <b>Cube Orange</b> flight controller, a buck converter power
           distribution board, and a sensor board for communication and sensor functionality.
         </p>
 
+        <figure>
+          <img src="images/sketch-hub.jpg" alt="Wiring hub sketch">
+        </figure>
+
         <p>
-          Above is a rough sketch of how the wiring hub was envisioned to look. The Cube Orange is mounted on the wiring
-          hub while the power distribution board is soldered on. The sensor board would be attached on top using pin
-          headers. Moreover, there would be various JST headers for connections to the sensor modules, control surfaces,
-          and other peripherals.
+          Above is an early sketch of the wiring hub design. The Cube Orange mounts to the hub, the power distribution board is soldered directly on, and the sensor and communications board attaches on top via pin headers.
+          JST headers are located around the sides for connecting to various sensor modules, control surfaces, and other peripherals.
         </p>
       </section>
 
       <section id="design and manufacturing">
         <h2>Design and Manufacturing</h2>
+
+        <figure>
+          <img src="images/wiring-hub-capture.jpg" alt="Wiring hub capture">
+        </figure>
+        
         <p>
-          The final wiring hub was designed to be a two-layer board with the necessary pins needed to route
-          communication signals from the Cube Orange to all the components on the plane. Moreover, auxiliary PWM ports were
-          broken out from the Cube Orange in case of the future need for more pins.
+          The final wiring hub design is a two-layer board carrying the pins needed to route communication signals from the Cube Orange out to every component in the plane's avionics system.
+          Auxiliary PWM ports were also broken out from the Cube Orange as an option for future expansion.
+          <br><br>
+          I implemented a USB connector for flashing the Cube Orange, but I routed it without differential pair tracing or protection. As the traces are short, this caused no problems in practice. However, it's the first thing I would modify in a revision.
         </p>
 
-        <p>
-          USB functionality was implemented for flashing the Cube Orange. However, I did not consider differential
-          signalling or signal protection for this. In a newer revision, I would definitely revist this concept. As the
-          traces were fairly short, the lack of differential routing did not cause a problem. However, this could definitely
-          cause a problem if more EMI-noisy components were used near the wiring hub.
-        </p>
+        <figure>
+          <img src="images/wiring-hub.jpg" alt="Wiring hub">
+        </figure>
 
         <p>
-          The manufacturing and testing was fairly simple. All connectors were hand-soldered. Flashing, connectivity, and system
-          integration tests were also conducted to ensure that the wiring hub was working as expected.
+          The manufacturing and testing of the board was straightforward. All connectors were hand-soldered. Flashing, connectivity, and system integration tests were also conducted to ensure that the wiring hub was working as expected.
         </p>
       </section>
     </div>
