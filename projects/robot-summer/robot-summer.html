@@ -55,13 +55,10 @@
           Students are only given six weeks to complete the entire project.
         </p>
 
-        <h3>Competition Rules</h3>
         <figure>
           <img src="images/competitionSurface.png" alt="Mario Kart themed competition surface with track, coins, and obstacles">
         </figure>
         <p>
-          Above is an overview of the competition surface.
-          <br><br>
           The competition is a series of one-on-one races between two teams. Each robot starts at the beginning of the track opposite of eachother.
           Three points are gained for every lap a robot completes. There are multiple ways to complete a lap. The easiest way is to design your robot to follow a black taped line (on the map highlighted in blue).
           There is also an IR beacon at the end of the surface that robots can hone onto for navigation.
@@ -71,10 +68,9 @@
           Shortcuts exist on the track. For example, a robot can opt to take the zipline (highlighted in black), or even jump off "Rainbow Road."
         </p>
       </section>
-      <section id="design">
-        <h2>Design</h2>
 
-        <h3>Brainstorming and Strategy</h3>
+      <section id="brainstorming-and-strategy">
+        <h2>Brainstorming and Strategy</h2>
 
         <figure>
           <img src="images/drawingSketch.png" alt="Initial sketches and brainstorming drawings of robot design">
@@ -113,8 +109,10 @@
           <br><br>
           To better cushion our robot when jumping off "Rainbow Road," we also brainstormed the possibility of adding a suspension system to our robot.
         </p>
+      </section>
 
-        <h3>Mechanical Design</h3>
+      <section id="mechanical-design">
+        <h2>Mechanical Design</h2>
 
         <figure>
           <img src="images/3DRough.png" alt="3D CAD model of robot chassis in OnShape">
@@ -142,9 +140,11 @@
           The intake consists of two rotating rubber brushes powered by a motor. As the robot drives forward, blocks are funnelled into the spinning brushes and sucked into the robot's storage area.
           To assist with block collection, a sheet metal ramp was fabricated with a waterjet and mounted to the front of the robot.
         </p>
+      </section>
 
-        <h3>Electrical Design</h3>
-        <h4>System Overview</h4>
+      <section id="electrical-design">
+        <h2>Electrical Design</h2>
+        <h3>System Overview</h3>
 
         <p>
           Below is the electrical system diagram of our robot.
@@ -170,7 +170,7 @@
             All circuits were hand-soldered by the team.
         </p>
 
-        <h4>Motor Control</h4>
+        <h3>Motor Control</h3>
         <p>
           For controlling the two drive motors, we used an H-bridge motor driver. The H-bridge allows us to control the direction and speed of the motors using PWM signals from the microcontroller.
           PWM stands for Pulse Width Modulation: it's a digital signal that rapidly switches between HIGH and LOW. The fraction of the time that the signal stays HIGH compared to LOW is called the duty cycle, and controls the voltage output of the signal.
@@ -187,7 +187,7 @@
         <figure>
           <img src="images/motorDrive.png" alt="H-bridge motor driver circuit schematic with gate driver and optocoupler isolation">
         </figure>
-        <h4>Line Following</h4>
+        <h3>Line Following</h3>
         <figure>
           <img src="images/reflectanceSense.png" alt="Reflectance sensor circuit for detecting black tape on white surface">
         </figure>
@@ -197,7 +197,7 @@
           This sensor data is used to determine how aligned the robot is with the tape.
         </p>
 
-        <h4>Infrared Detection</h4>
+        <h3>Infrared Detection</h3>
         <figure>
           <img src="images/infraredBeacon.png" alt="Infrared phototransistor circuit with amplification for beacon detection">
         </figure>
@@ -205,8 +205,10 @@
           For infrared detection, two infrared phototransistors were used. These sensors output a voltage based on the amount of infrared light they receive. The phototransistors were mounted on the front of the robot where they would receive the most infrared light when the robot is facing the beacon.
           An amplification circuit was also added to allow detection of the infrared beacon from a further distance.
         </p>
+      </section>
 
-        <h3>Software Design</h3>
+      <section id="software-design">
+        <h2>Software Design</h2>
         <p>
           The robot's software was written in C using the STM32CubeIDE. The main components of the software include:
           <ul>
