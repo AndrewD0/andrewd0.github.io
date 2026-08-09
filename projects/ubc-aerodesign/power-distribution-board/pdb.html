@@ -35,7 +35,7 @@
       <section id="project-overview">
         <h2>Project Overview</h2>
         <p>As part of my role on the avionics team at <b><a href="https://www.ubcaerodesign.com/" target="_blank">UBC AeroDesign</a></b>, I designed a power distribution board used for stepping down the voltage from a 
-          main 30V battery to a 5V output that powers the sensors and communications systems on the plane. The board was designed using Altium EDA.</p>
+          main 30V battery to a 5V output that powers the sensors and communications systems of a fixed-wing plane. The board was designed using Altium EDA.</p>
         </p>
       </section>
 
@@ -44,24 +44,154 @@
         <p>
           A buck converter is a type of electronic power circuit that is able to convert a higher input voltage into a lower output voltage; it is one of the most popular topologies in power electronics. 
           The circuit is fairly simple: the main components are a switch, an inductor, and an output capacitor.
+        </p>
+
+        <figure class="schematic">
+          <svg viewBox="0 0 660 500" role="img" aria-label="Schematic of a buck converter: an input voltage source feeding a PWM-controlled switch, a freewheeling diode to ground, and an LC filter supplying the load. Below, two panels trace the current path while the switch is closed and while it is open.">
+            <defs>
+              <marker id="flow-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                <path d="M0 0 L10 5 L0 10 Z" fill="#386cbc"/>
+              </marker>
+            </defs>
+            <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- input source -->
+              <rect x="45" y="120" width="52" height="62" rx="2"/>
+              <path d="M71 120 V70 M71 182 V240"/>
+              <!-- top rail into the switch -->
+              <path d="M71 70 H184"/>
+              <!-- switch: open blade -->
+              <path d="M184 70 L240 47"/>
+              <path d="M248 70 H330"/>
+              <!-- PWM control block, dashed link to the switch -->
+              <rect x="166" y="104" width="92" height="42" rx="2"/>
+              <path d="M212 104 V80" stroke-dasharray="4 4"/>
+              <!-- freewheeling diode (cathode up) -->
+              <path d="M330 70 V118 M330 152 V240"/>
+              <path d="M318 152 L342 152 L330 122 Z" fill="currentColor" stroke="none"/>
+              <path d="M316 120 H344"/>
+              <!-- inductor -->
+              <path d="M330 70 H360"/>
+              <path d="M360 70 a12.5 12.5 0 0 1 25 0 a12.5 12.5 0 0 1 25 0 a12.5 12.5 0 0 1 25 0 a12.5 12.5 0 0 1 25 0"/>
+              <path d="M460 70 H520"/>
+              <!-- output capacitor -->
+              <path d="M520 70 V142 M520 162 V240"/>
+              <path d="M502 142 H538 M502 162 H538"/>
+              <!-- load -->
+              <path d="M520 70 H600 V104"/>
+              <path d="M600 104 l-11 11 l22 22 l-22 22 l22 22 l-22 22 l11 11"/>
+              <path d="M600 214 V240"/>
+              <!-- return rail -->
+              <path d="M71 240 H600"/>
+            </g>
+            <g fill="currentColor" stroke="none">
+              <circle cx="184" cy="70" r="3.5"/>
+              <circle cx="248" cy="70" r="3.5"/>
+              <circle cx="330" cy="70" r="3.5"/>
+              <circle cx="520" cy="70" r="3.5"/>
+            </g>
+            <g fill="currentColor" font-family="'Inter-Regular', sans-serif" font-size="13">
+              <text x="71" y="156" text-anchor="middle">V<tspan font-size="9" dy="3">IN</tspan></text>
+              <text x="216" y="34" text-anchor="middle">SWITCH</text>
+              <text x="212" y="121" text-anchor="middle" font-size="11">PWM</text>
+              <text x="212" y="136" text-anchor="middle" font-size="11">CONTROL</text>
+              <text x="352" y="140">D</text>
+              <text x="410" y="42" text-anchor="middle">L</text>
+              <text x="492" y="157" text-anchor="end">C</text>
+              <text x="622" y="152">LOAD</text>
+              <text x="622" y="66">V<tspan font-size="9" dy="3">OUT</tspan></text>
+            </g>
+
+            <!-- ================= switch closed ================= -->
+            <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="28" y="378" width="26" height="40" rx="2"/>
+              <path d="M41 378 V345 M41 418 V455"/>
+              <path d="M41 345 H85"/>
+              <path d="M85 345 H125"/>
+              <path d="M125 345 H180"/>
+              <path d="M180 345 a10 10 0 0 1 20 0 a10 10 0 0 1 20 0 a10 10 0 0 1 20 0"/>
+              <path d="M240 345 H300 V375"/>
+              <path d="M300 375 l-8 8 l16 16 l-16 16 l16 16 l-8 8"/>
+              <path d="M300 439 V455"/>
+              <path d="M265 345 V388 M265 398 V455"/>
+              <path d="M253 388 H277 M253 398 H277"/>
+              <path d="M41 455 H300"/>
+            </g>
+            <g opacity="0.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
+              <path d="M160 345 V368 M160 392 V455"/>
+              <path d="M150 370 H170"/>
+              <path d="M152 392 L168 392 L160 372 Z" fill="currentColor" stroke="none"/>
+            </g>
+            <g fill="currentColor" stroke="none">
+              <circle cx="85" cy="345" r="3"/><circle cx="125" cy="345" r="3"/>
+              <circle cx="160" cy="345" r="3"/><circle cx="265" cy="345" r="3"/>
+            </g>
+            <g fill="none" stroke="#386cbc" stroke-width="1.6" stroke-linecap="round" marker-end="url(#flow-arrow)">
+              <path d="M52 345 H72"/>
+              <path d="M244 345 H262"/>
+              <path d="M300 352 V372"/>
+              <path d="M200 455 H176"/>
+            </g>
+
+            <!-- ================= switch open ================= -->
+            <g opacity="0.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="348" y="378" width="26" height="40" rx="2"/>
+              <path d="M361 378 V345 M361 418 V455"/>
+              <path d="M361 345 H405"/>
+              <path d="M405 345 L437 329"/>
+              <!-- source branch carries no current while the switch is open -->
+              <path d="M445 345 H480"/>
+              <path d="M361 455 H480"/>
+            </g>
+            <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M480 345 H500"/>
+              <path d="M500 345 a10 10 0 0 1 20 0 a10 10 0 0 1 20 0 a10 10 0 0 1 20 0"/>
+              <path d="M560 345 H620 V375"/>
+              <path d="M620 375 l-8 8 l16 16 l-16 16 l16 16 l-8 8"/>
+              <path d="M620 439 V455"/>
+              <path d="M585 345 V388 M585 398 V455"/>
+              <path d="M573 388 H597 M573 398 H597"/>
+              <path d="M480 345 V368 M480 392 V455"/>
+              <path d="M470 370 H490"/>
+              <path d="M472 392 L488 392 L480 372 Z" fill="currentColor" stroke="none"/>
+              <path d="M480 455 H620"/>
+            </g>
+            <g fill="currentColor" stroke="none" opacity="0.3">
+              <circle cx="405" cy="345" r="3"/><circle cx="445" cy="345" r="3"/>
+            </g>
+            <g fill="currentColor" stroke="none">
+              <circle cx="480" cy="345" r="3"/><circle cx="585" cy="345" r="3"/>
+            </g>
+            <g fill="none" stroke="#386cbc" stroke-width="1.6" stroke-linecap="round" marker-end="url(#flow-arrow)">
+              <path d="M564 345 H582"/>
+              <path d="M620 352 V372"/>
+              <path d="M556 455 H532"/>
+              <path d="M480 432 V404"/>
+              <path d="M486 345 H502"/>
+            </g>
+
+            <g fill="currentColor" font-family="'Inter-Regular', sans-serif" font-size="12">
+              <text x="41" y="402" text-anchor="middle" font-size="10">V<tspan font-size="7" dy="2">IN</tspan></text>
+              <text x="361" y="402" text-anchor="middle" font-size="10" opacity="0.3">V<tspan font-size="7" dy="2">IN</tspan></text>
+              <text x="105" y="312" text-anchor="middle">SWITCH ON</text>
+              <text x="425" y="312" text-anchor="middle">SWITCH OFF</text>
+            </g>
+          </svg>
+        </figure>
+
+        <p>
+          A buck converter is able to turn a higher voltage input into a lower voltage output using a switch that is rapidly turned on and off.
+          If, for a given period of time, the switch is on for 50% of the time, the output voltage will as a consequence be
+          50% of the input voltage. This percentage of time that the switch is on compared to the period is called the <b>duty cycle</b>, and the method of controlling the output through
+          rapidly turning on and off a switch is called PWM, or <b>pulse-width modulation</b>. Practically, an actual switch is not used. Instead, a transistor such as a MOSFET or a BJT serve as the switch.
           <br><br>
-          Above is a diagram of a buck converter circuit in action. Note that the switch breaks or connects the entire circuit.
+          
+          While the switch is open, the voltage at the output will drop to 0. As the switch is turned on and off, the output voltage will swing rapidly between the input voltage level and 0. To maintain
+          a constant voltage and current, an <b>LC filter</b> is implemented at the output. The inductor resists changes in current and develops a back-EMF to keep current flowing steadily, while the capacitor
+          will oppose changes in voltage by sourcing or sinking current to keep the output voltage constant.
           <br><br>
-          A buck converter is able to turn a higher voltage input into a lower voltage output through the use of a switch.
-          The switch does this by being rapidly turned on and off. If, for a given period of time, the switch is off for 50% of said period, the output voltage will as a consequence be
-          50% of the input voltage. This percentage of time that the switch is off compared to the period is called the <b>duty cycle</b>, and the method of controlling the output through
-          rapidly turning on and off a switch is called PWM, or <b>pulse-width modulation</b>. 
+          With this current implementation, there's nowhere for the inductor current to flow when the switch opens. A Schottky diode is added between ground and the inductor's input side to give the current a path to keep flowing.
           <br><br>
-          Practically, an actual switch is not used. Instead, a transistor such as a MOSFET or a BJT serve as the switch.
-          <br><br>
-          In the times where the switch is open, we notice that the voltage at the output will go to 0. As a consequence, as the switch is turned on and off, the output voltage will also fluctuate rapidly. To maintain
-          a constant voltage and current delivery, an <b>LC filter</b> is implemented at the output. The inductor resists changes in current and emits an EMF to keep current flowing constant while
-          the capacitor will also emit current when it senses a change in voltage.
-          <br><br>
-          It's also noticed that with this implementation there is nowhere for the current from the inductor to go when the switch is open. To give the current a path back to the negative end of the inductor, a
-          Schottky diode is added in parallel with the capacitor.
-          <br><br>
-          Buck converters are often used in power electronics due to their high efficiency as the voltage is stepped down
+          Buck converters are often used in power electronics due to their high efficiency, as the voltage is stepped down
           through the use of PWM switching instead of through resistors, where the voltage is dissipated as heat. Moreover, buck converters can step voltage down to a wide range of output voltages from
           a wide range of input voltages.
         </p>
@@ -71,26 +201,30 @@
         <h2>Design and Manufacturing</h2>
 
         <p>
-          To select the best suited choice for our requirements, I utilized a weighted decision matrix to
-          rank various IC choices. All ICs had to be able to step 30V input down to 5V and output 10 A (in line with our power requirements for the plane).
-          However, there were other specifications such as cost, supply, and footprint size, among others, that also had to be considered.
+          To select the buck converter IC best suited to our requirements, I used a weighted decision matrix to rank a list of candidates. Every IC had to step down
+          a 30V input down to 5V at 10A, in line with the plane's power requirements. Cost, availibility, and footprint size also had to be weighted. The matrix allowed me to
+          quantitiatvely rank each option and gave me a clear justification to present to my team. I ended up choosing the Texas Instruments LM5146.
           <br><br>
-          Using a weighted decision matrix helped me quantitatively rank choices and provide a strong justification to
-          my team as to why I chose a particular IC. Finally, I decided on the Texas Instruments LM5146.
-          <br><br>
-          Following the datasheet, I calculated several values essential to designing the buck converter circuit. This
-          would be the duty cycle, the inductor ripple current, peak switching/diode/inductor current, and the minimum inductance
-          required for the inductor component.
+          Following the datasheet, I calculated several values needed to design the buck converter circuit: the duty cycle, the inductor ripple current, the switching frequency, the peak switch,
+          diode, and inductor currents, and the minimum inductance required.
         </p>
 
+        <figure>
+          <img src="images/buck-altium.png" alt="Altium schematic of the buck converter design">
+        </figure>
+
         <p>
-          The final design is shown above. This includes an input current protection circuit, MOSFETs to handle the
-          switching (controlled by the IC through a PWM signal), and castellated edges for soldering the buck converter
-          onto a larger printed circuit board. Via stitching was used to ensure minimum impedance for return currents. The use of polygon pours as power planes was also extensively used
-          as this provides better current-carrying capacity and heat dissipation.
-          <br><br>
-          For our initial testing, the protection circuits were removed as well as the castellated edges to save on
-          cost. The components were soldered on using a reflow oven. Testing was done through using an oscilloscope to measure the converter's input and output waveforms; these measurements were used to calculate the overall efficiency of the buck converter.
+          The final design includes an input current protection circuit, MOSFETs to handle the switching (driven by the IC over a PWM signal), and castellated edges for soldering the buck converter PCB onto a larger board.
+          Via stitching was used to minimize impedance for return currents, and polygon pours were used extensively for routing power as it improves current-carrying capacity and heat dissipation.
+        </p>
+          
+        <figure>
+          <img src="images/manufacture-pdb.jpg" alt="Manufactured boards">
+        </figure>
+        
+        <p>
+          For initial testing, I removed the protection circuits and the castellated edges to improve on cost. The components were soldered using a reflow oven. Using an oscilloscope, I measured the converter's input and output waveforms
+          and used those measurements to calculate an overall efficiency.
         </p>
 
       </section>

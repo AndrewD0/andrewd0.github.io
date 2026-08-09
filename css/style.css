@@ -283,15 +283,32 @@ main.project-documentation {
 .project-documentation figure {
   margin: 2rem auto;
   padding: 0.25rem;
-  max-width: 100%;
+  width: fit-content;
+  max-width: 40rem;
   background: #161616;
   border: 1px solid #262626;
   border-radius: 0.4rem;
 }
 
+/* Cap height too, so portrait photos don't run taller than the viewport. */
 .project-documentation figure img {
   margin: 0;
   border: 1px solid #333;
+  max-height: 30rem;
+  width: auto;
+}
+
+/* Inline SVG schematics inherit the page's text colour via currentColor. */
+.project-documentation figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The SVG sizes from its container, so it needs a definite width, not fit-content. */
+.project-documentation figure.schematic {
+  padding: 1.25rem 1rem;
+  width: 100%;
 }
 
 .project-sections {
